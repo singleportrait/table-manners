@@ -1,0 +1,35 @@
+/* VARS */
+
+$red: rgb(170,20,10);
+
+$beige: rgb(255,254,250);
+
+$brown: rgb(94,26,24);
+
+$brown_tint: #c7a8a9;
+
+
+/* .calluna, .garamond, & .minion */
+
+body {
+  font-size: 18px;
+  line-height: 24px;
+  background: $beige;
+  font-family: 'Adobe Caslon Pro';
+}
+
+div.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: $red;
+}
+
+h2 {
+  margin: 1em 3em 0;
+  padding: 1em;
+  border-top: 1px solid $brown_tint;
+}
