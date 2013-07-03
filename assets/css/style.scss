@@ -1,21 +1,33 @@
+@import "reset";
+
 /* VARS */
+
+$font: 18px/24px 'Adobe Caslon Pro';
 
 $red: rgb(170,20,10);
 
 $beige: rgb(255,254,250);
 
+$brown_dark: rgb(39,14,9);
+
 $brown: rgb(94,26,24);
 
 $brown_tint: #c7a8a9;
 
+/* Typography */
+/*$base-font-size:   18px;
+$base-line-height: 24px;
+
++establish-baseline($base-font-size)
+*/
+/*  +adjust-font-size-to(15px); */
 
 /* .calluna, .garamond, & .minion */
 
 body {
-  font-size: 18px;
-  line-height: 24px;
   background: $beige;
-  font-family: 'Adobe Caslon Pro';
+  font: $font;
+  color: $brown_dark;
 }
 
 div.content {
@@ -23,13 +35,87 @@ div.content {
   margin: 0 auto;
 }
 
-h1, h2, h3 {
+/* Text */
+
+p {
+  margin: 1em 0;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: $red;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Caslon 3';
   text-align: center;
   color: $red;
 }
 
+h1 {
+  font-size: 2em;
+  line-height: 2.5em;
+}
+
 h2 {
+  font-size: 1.66em;
   margin: 1em 3em 0;
   padding: 1em;
   border-top: 1px solid $brown_tint;
+}
+
+h3 {
+  font-size: 1.33em;
+  margin: 1.5em 0 0;
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+/* Lists */
+
+ol, ul {
+  margin: 1em 2em;
+}
+
+ol {
+  &:first-child {
+    //counter-reset: customlistcounter;
+  }
+  li {
+    list-style-type: decimal-leading-zero;
+    //counter-increment: customlistcounter;
+    &:before {
+      //content: counter(customlistcounter) " ";
+    }
+  }
+}
+
+li {
+  margin: .5em 0;
+}
+
+/* Forms */
+
+input {
+  padding: 6px 6px 3px;
+  margin: 4px;
+  border: 1px solid $brown_tint;
+  border-radius: 3px;
+  font: $font;
+  &[type='text'] {
+    width: 160px;
+  }
 }
