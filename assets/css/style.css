@@ -63,8 +63,11 @@ $base-line-height: 24px;
 */
 /*  +adjust-font-size-to(15px); */
 /* .calluna, .garamond, & .minion */
+* {
+  box-sizing: border-box; }
+
 body {
-  background: #fffefa;
+  background: #fffefe;
   font: 18px/24px "Adobe Caslon Pro";
   color: #270e09; }
 
@@ -111,11 +114,19 @@ h4 {
   text-transform: uppercase; }
 
 /* Lists */
+nav {
+  overflow: hidden; }
+  nav ol {
+    width: 50%;
+    float: left; }
+
 ol, ul {
-  margin: 1em 2em; }
+  padding: 1em 2em; }
 
 ol li {
   list-style-type: decimal-leading-zero; }
+  ol li.error {
+    color: red; }
 
 li {
   margin: .5em 0; }
