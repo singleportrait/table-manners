@@ -333,7 +333,7 @@
 
         <h4>Self Test</h4>
 
-        <p><small>Click here for the <a href="test-answers.html">answers to the self-test questions</a>.</small></p>
+        <!-- <p><small>Click here for the <a href="test-answers.html">answers to the self-test questions</a>.</small></p> -->
 
         <form name="set_1" method="POST" action="">
           <ol>
@@ -346,33 +346,33 @@
           <h5>True or False?</h5>
           <ol start="6">
             <li>
-              <input type="radio" name="q6" value="true" id="q6"><span></span>
-              <input type="radio" name="q6" value="false"><span></span>
+              <input type="radio" name="q6" value="true" id="q6"><span>T</span>
+              <input type="radio" name="q6" value="false"><span>F</span>
               <label for="q6">Ascots are not as formal as ties.</label>
             </li>
             <li>
-              <input type="radio" name="q7" value="true" id="q7"><span></span>
-              <input type="radio" name="q7" value="false"><span></span>
+              <input type="radio" name="q7" value="true" id="q7"><span>T</span>
+              <input type="radio" name="q7" value="false"><span>F</span>
               <label for="q7">A hat is worn to all formal evening events.</label>
             </li>
             <li>
-              <input type="radio" name="q8" value="true"><span></span>
-              <input type="radio" name="q8" value="false"><span></span>
+              <input type="radio" name="q8" value="true"><span>T</span>
+              <input type="radio" name="q8" value="false"><span>F</span>
               A woman doesn't remove her dress gloves to eat.
             </li>
             <li>
-              <input type="radio" name="q9" value="true"><span></span>
-              <input type="radio" name="q9" value="false"><span></span>
+              <input type="radio" name="q9" value="true"><span>T</span>
+              <input type="radio" name="q9" value="false"><span>F</span>
               Woman remove their gloves when dining.
             </li>
             <li>
-              <input type="radio" name="q10" value="true"><span></span>
-              <input type="radio" name="q10" value="false"><span></span>
+              <input type="radio" name="q10" value="true"><span>T</span>
+              <input type="radio" name="q10" value="false"><span>F</span>
               The best place to put your gloves and purse are on the table.
             </li>
             <li>
-              <input type="radio" name="q11" value="true"><span></span>
-              <input type="radio" name="q11" value="false"><span></span>
+              <input type="radio" name="q11" value="true"><span>T</span>
+              <input type="radio" name="q11" value="false"><span>F</span>
               Men remove both their hats and gloves when indoors.
             </li>
           </ol>
@@ -463,7 +463,7 @@
           <ol start="12">
             <li>A woman always goes through doors <input type="text" name="q12a"> and down stairs <input type="text" name="q12b">.</li>
             <li>When a man and a woman are walking along the street, <br> the man walks on the <input type="text" name="q13"> side.</li>
-            <li>Introductions, handshakes, and guests of honor have one thing in common: <br>the <input type="text" name="q14"> person comes first.</li>
+            <li>Introductions, handshakes, and guests of honor have one thing in common: the <input type="text" name="q14"> person comes first.</li>
             <!-- <li>When introducing two people, the name of the person who is <input type="text" name="q15"> is said first. </li> -->
           </ol>
 
@@ -646,8 +646,8 @@ If something is broken, simply apologize, and make
         with the utmost kindness. </p>
 
         
-        <h3>When do you correct someone?</h3>
-        <ol>
+        <h5>When do you correct someone?</h5>
+        <ol class="min">
           <li>If at all possible, when you're alone.</li>
           <li>When you will spare them further embarrassment.</li>
         
@@ -680,13 +680,13 @@ If something is broken, simply apologize, and make
           <h5>True or False?</h5>
           <ol start="24">
             <li>
-              <input type="radio" name="q24" value="false">
-              <input type="radio" name="q24" value="true">
+              <input type="radio" name="q24" value="true"><span>T</span>
+              <input type="radio" name="q24" value="false"><span>F</span>
               If someone's dress is undone, don't tell them.
             </li>
             <li>
-              <input type="radio" name="q25" value="false">
-              <input type="radio" name="q25" value="true">
+              <input type="radio" name="q25" value="true"><span>T</span>
+              <input type="radio" name="q25" value="false"><span>F</span>
               It's impolite to put lipstick on at the table.
             </li>
           </ol>
@@ -1246,6 +1246,11 @@ If something is broken, simply apologize, and make
             <li>When in doubt, use your <input type="text" name="q61">.</li>
             <li>Spaghetti is eaten with a <input type="text" name="q62"> only.</li>
             <li><input type="text" name="q63"> are not used on vegetables.</li>
+          </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
+        </form>
       
       </section>
 
@@ -1289,9 +1294,7 @@ If something is broken, simply apologize, and make
         forefinger into a cupped hand. Then set it on the edge of your plate. If you 
         need to remove something that has become lodged between your teeth, wait 
         until you're alone to do so.</p>
-        <strong>
         <h3>Cutting</h3>
-        </strong>
         <p>The American way of cutting is with the fork in your left 
         hand and the knife in your right hand. Then lay the knife on the edge of the 
         plate and move the fork to your right hand. Put the bite in your mouth with 
@@ -1304,9 +1307,8 @@ If something is broken, simply apologize, and make
         <p>Cut one piece at a time. Eat it, and then cut another. 
         Between bites, lay your silverware down on your plate. It will keep you from 
         inadvertently waving your silverware around when you talk with your hands.</p>
-        <strong>
+
         <h3>I Dropped my Fork!</h3>
-        </strong>
         <p>Traditionally, if you dropped a piece of silverware, you 
         were to leave it where it fell and simply tell a server, so they can bring 
         you another. Today if you drop a piece of your silverware, and it is easily 
@@ -1328,22 +1330,22 @@ If something is broken, simply apologize, and make
 
         <h5>True or False?</h5>
 
-        <form>
+        <form name="set_64" method="POST" action="">
           <ol start="64">
             <li>
-              <input type="radio" name="q64" value="false">
-              <input type="radio" name="q64" value="true">
+              <input type="radio" name="q64" value="true"><span>T</span>
+              <input type="radio" name="q64" value="false"><span>F</span>
               Traditionally it was considered unacceptable to tilt your soup or dessert bowl.
             </li>
 
             <li>
-              <input type="radio" name="q65" value="false">
-              <input type="radio" name="q65" value="true">
+              <input type="radio" name="q65" value="true"><span>T</span>
+              <input type="radio" name="q65" value="false"><span>F</span>
               Today if there is a salad knife it is acceptable to cut your lettuce.
             </li>
             <li>
-              <input type="radio" name="q66" value="false">
-              <input type="radio" name="q66" value="true">
+              <input type="radio" name="q66" value="true"><span>T</span>
+              <input type="radio" name="q66" value="false"><span>F</span>
               When taking something out of your mouth, it is best to spit into a napkin.
             </li>
           </ol>
@@ -1518,14 +1520,14 @@ If something is broken, simply apologize, and make
         give:</p>
 
         <ul>
-          <li><strong>Valet Parking</strong>: 50 cents to $1. </li>
-          <li><strong>Coat Check</strong> - $1.</li>
-          <li>Restroom attendants 50 cents to $1.</li>
-          <li>Head waiter or Maitre'd may be given $5-10 if his service deserved it. Hand it to him as you leave.</li>
-          <li>Wine steward up to 15 percent of the cost of the wine.</li>
-          <li>Doormen $1 for hailing a cab.</li>
-          <li>Skycaps $1 per bag.</li>
-          <li>Room service, hairdressers, and taxis 15 percent of the bill.</li>
+          <li><strong class="special">Valet Parking</strong> - 50 cents to $1. </li>
+          <li><strong class="special">Coat Check</strong> - $1.</li>
+          <li><strong class="special">Restroom attendants</strong> - 50 cents to $1.</li>
+          <li><strong class="special">Head waiter or Maitre'd</strong> - may be given $5-10 if his service deserved it. Hand it to him as you leave.</li>
+          <li><strong class="special">Wine steward</strong> - up to 15 percent of the cost of the wine.</li>
+          <li><strong class="special">Doormen</strong> - $1 for hailing a cab.</li>
+          <li><strong class="special">Skycaps</strong> - $1 per bag.</li>
+          <li><strong class="special">Room service, hairdressers, and taxis</strong> - 15 percent of the bill.</li>
         </ul>
             
         <h3>Calculating the Tip</h3>
@@ -1598,6 +1600,8 @@ If something is broken, simply apologize, and make
           <div class="earned">8</div>
           <div class="total">12</div>
         </div>
+
+        <p><a class="button" href="#close">Continue</a></p>
       </div>
 
     </div>

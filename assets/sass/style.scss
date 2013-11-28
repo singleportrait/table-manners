@@ -1,5 +1,6 @@
 @import "reset";
 
+@import "compass/utilities/general/clearfix";
 @import "compass/css3";
 
 /* VARS */
@@ -15,9 +16,13 @@ $red:       rgb(170,20,10);
 
 $lime:      #e4ff00;
 
-$lime_alt:  #c8df00;
+$lime2:     #f6ff00;
+
+$lime_alt:  darken($lime2, 3%);
 
 $lime_med:  #b1c600;
+
+$lime_light: #fcffde;
 
 $lime_dark: #97a900;
 
@@ -25,7 +30,9 @@ $red:       #f26c4f;
 
 $red_brighter: #fd4b24;
 
-$accent:      $lime;
+$accent:       $lime_alt;
+
+$accent_light: $lime_light;
 
 $accent_text: $lime_med;
 
@@ -93,7 +100,7 @@ section.header {
   border-bottom: 0;
   cursor: pointer;
   font-family: $font_accent_family;
-  font-size: 1.15em;
+  font-size: 1.2em;
   color: black;
   &:hover {
     text-decoration: none;
@@ -169,6 +176,7 @@ h1, h2, h3, h4, h5 {
   h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     color: black;
+    margin: .5em 0;
   }
 }
 
@@ -242,16 +250,10 @@ ol {
         border-bottom-color: $error;
       }
 
-      input[type="radio"][value="true"] + span {
-        background-image:url(../images/T-error.png);
+      input[type="radio"] + span {
+        border-color: $error;
         &:hover {
-          background-image:url(../images/T-error-hover.png);
-        }
-      }
-      input[type="radio"][value="false"] + span {
-        background-image:url(../images/F-error.png);
-        &:hover {
-          background-image:url(../images/F-error-hover.png);
+          background-color: lighten($error, 20%);
         }
       }
 
@@ -315,7 +317,7 @@ ol {
       font-weight:600;
       font-family: $font_accent_family;
       text-align:center;
-      color: $accent_text;
+      color: darken($accent, 6%);
     }
   }
 }
@@ -329,9 +331,12 @@ input {
   border: none;
   border-bottom: 4px solid $lime_alt;
   font-family: $font_accent_family;
-  font-size: 1.15em;
+  font-size: 1.2em;
   &[type='text'] {
     width: 10em;
+    &.selected {
+      border-bottom-color: $error;
+    }
   }
   &[type='radio'] {
     //position: absolute; 
@@ -344,25 +349,23 @@ input {
       left:-2px; /* we're moving it slightly to the left */
       margin: 0 .5em 0 0;
       width:41px; height:41px; /* the width and height of the fake elements */
-      background-image:url(../images/T.png); /* the background image sprite */
+
+      border: 4px solid $accent;
+      background-color: white;
       cursor: pointer;
+      font: 500 1.25em/1.5em $font_accent_family;
+      @include border-radius(21px);
+      text-align: center;
       &:hover {
-        background-image:url(../images/T-hover.png);
-      }
-    }
-    &[value="false"] {
-      + span {
-        background-image:url(../images/F.png);
-        &:hover {
-          background-image:url(../images/F-hover.png);
-        }
-      }
-      &:checked + span {
-        background-image:url(../images/F-selected.png);
+        background-color: lighten($accent, 40%);
       }
     }
     &:checked + span {
-      background-image:url(../images/T-selected.png);
+      background-color: $accent;
+    }
+    &.selected + span {
+      background-color: $error;
+      border-color: $error;
     }
   }
 
@@ -375,6 +378,27 @@ input {
   }
 }
 
+
+/* Quiz Stuff */
+
+.points {
+  font-family: $font_accent_family;
+  font-size: 3em;
+  line-height: 1em;
+  margin: .5em 0;
+  @include clearfix;
+  div {
+    width: 47%;
+    &.earned {
+      text-align: right;
+      float: left;
+    }
+    &.total {
+      float: right;
+      margin: .5em 0 0;
+    }
+  }
+}
 
 
 
@@ -391,6 +415,7 @@ input {
   opacity:0;
   @include transition(opacity 400ms ease-in);
   pointer-events: none;
+  text-align: center;
 
   &:target {
     opacity:1;
@@ -404,20 +429,17 @@ input {
     padding: 5px 20px 13px 20px;
     @include border-radius(3px);
     background: #fff;
+    @include clearfix;
   }
   .close {
-    background: #606061;
-    color: #FFFFFF;
-    line-height: 25px;
     position: absolute;
-    right: -12px;
-    text-align: center;
-    top: -10px;
+    color: black;
+    right: 10px;
     width: 24px;
+    font-size: 2em;
+    font-family: $font_accent_family;
+    text-align: center;
     text-decoration: none;
-    font-weight: bold;
-    @include border-radius(3px);
-    @include box-shadow(1px 1px 3px #000);
-    &:hover { background: #00d9ff; }
+    &:hover { color: #555; }
   }
 }
