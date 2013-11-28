@@ -1,3 +1,20 @@
+// The Real Deal
+
+(function() {
+
+  $(document).ready(function() {
+
+    console.log($('form span'));
+    $('form span').click(function(e) {
+      $(this).prev('input').prop('checked', true);
+      $(this).parent('li').removeClass('error');
+    });
+
+  });
+
+}());
+
+
 var validator = new FormValidator('set_1', [
   {name:'q1',rules:'required'}, 
   {name:'q2',rules:'required'}, 
@@ -14,12 +31,15 @@ var validator = new FormValidator('set_1', [
 ], function(errors, event) {
 
   $('li').removeClass('error');
+  $('p.error-message').removeClass('visible');
   console.log(errors);
   if (errors.length > 0) {
     for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
       console.log('Question ' + errors[i].name + ' is required');
       $('input[name="' + errors[i].name + '"]').parent('li').addClass('error');
     }
+
+    $(this.form).children('p.error-message').addClass('visible');
 
   } else {
 

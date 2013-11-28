@@ -14,17 +14,25 @@
   </head>
   <body class="minion">
 
-    <div class="content">
+    <section class="header">
 
-      <section class="header">
+      <div class="content">
 
         <h1>Table Manners</h1>
-        <p>in Twenty Minutes</p>
+        <p class="subhead">in Twenty Minutes</p>
 
-        <p>2nd Revision</p>
-        <h3>by Christine Rooney Merchent</h3>
+        <p>by Christine Rooney Merchent</p>
+        <!-- <p>2nd Revision</p> -->
 
-      </section>
+        <h2>A contemporary guide to the ins and outs of dining etiquette</h2>
+
+        <p><a class="button" href="#toc">Begin</a></p>
+
+      </div>
+
+    </section>
+
+    <div class="main content">
 
       <section id="toc">
 
@@ -73,8 +81,8 @@
         intimidating.</p>
 
         <p>So, I decided to write a book on table manners. All my 
-        friends said not to, "There are a million manners books out there, no one 
-        wants another one!" But there was one person, me. If I was the only person 
+        friends said not to. "There are a million manners books out there, no one 
+        wants another one!" But there was one person: me. If I was the only person 
         who benefited from the book, it would be enough.</p>
         <p>I wanted facts, not opinions, and they were very 
         difficult to find. I attempted to trace the rules of etiquette back to their 
@@ -114,6 +122,7 @@
 
       <section>
         <h2>Table Manners in 20 Minutes</h2>
+        <!-- <p><em>2nd Revision</em></p> -->
 
         <p>Yes, only 20 minutes! It's just not that complicated when 
         you stick to "the rules.   People believe table manners are very complicated, 
@@ -132,10 +141,10 @@
         <p>No one wants to look foolish by accidentally drinking out 
         of the finger bowl. The main reason to know the "rules" is to be kind, 
         polite, and inoffensive.</p>
-        <strong>
-        <p>The first rule of manners is never use your knowledge of 
-        manners and etiquette to put someone else down. </p>
-        </strong>
+
+        <blockquote>The first rule of manners is never use your knowledge of 
+        manners and etiquette to put someone else down. </blockquote>
+
         <p>If you do, you aren't using good manners yourself, and 
         you definitely aren't being kind. Only extremely rude people take pride in 
         knowing <em>"the rules"</em> and pointing out someone else's lack of knowledge 
@@ -337,38 +346,39 @@
           <h5>True or False?</h5>
           <ol start="6">
             <li>
-              <input type="radio" name="q6" value="false">
-              <input type="radio" name="q6" value="true">
-              Ascots are not as formal as ties.
+              <input type="radio" name="q6" value="true" id="q6"><span></span>
+              <input type="radio" name="q6" value="false"><span></span>
+              <label for="q6">Ascots are not as formal as ties.</label>
             </li>
             <li>
-              <input type="radio" name="q7" value="false">
-              <input type="radio" name="q7" value="true">
-              A hat is worn to all formal evening events.
+              <input type="radio" name="q7" value="true" id="q7"><span></span>
+              <input type="radio" name="q7" value="false"><span></span>
+              <label for="q7">A hat is worn to all formal evening events.</label>
             </li>
             <li>
-              <input type="radio" name="q8" value="false">
-              <input type="radio" name="q8" value="true">
+              <input type="radio" name="q8" value="true"><span></span>
+              <input type="radio" name="q8" value="false"><span></span>
               A woman doesn't remove her dress gloves to eat.
             </li>
             <li>
-              <input type="radio" name="q9" value="false">
-              <input type="radio" name="q9" value="true">
+              <input type="radio" name="q9" value="true"><span></span>
+              <input type="radio" name="q9" value="false"><span></span>
               Woman remove their gloves when dining.
             </li>
             <li>
-              <input type="radio" name="q10" value="false">
-              <input type="radio" name="q10" value="true">
+              <input type="radio" name="q10" value="true"><span></span>
+              <input type="radio" name="q10" value="false"><span></span>
               The best place to put your gloves and purse are on the table.
             </li>
             <li>
-              <input type="radio" name="q11" value="false">
-              <input type="radio" name="q11" value="true">
+              <input type="radio" name="q11" value="true"><span></span>
+              <input type="radio" name="q11" value="false"><span></span>
               Men remove both their hats and gloves when indoors.
             </li>
           </ol>
 
           <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
         </form>
 
       </section>
@@ -451,11 +461,15 @@
         <form>
 
           <ol start="12">
-            <li>A woman always goes through doors and down stairs <input type="text" name="q12">.</li>
+            <li>A woman always goes through doors <input type="text" name="q12a"> and down stairs <input type="text" name="q12b">.</li>
             <li>When a man and a woman are walking along the street, <br> the man walks on the <input type="text" name="q13"> side.</li>
             <li>Introductions, handshakes, and guests of honor have one thing in common: <br>the <input type="text" name="q14"> person comes first.</li>
-            <li>When introducing two people, the name of the person who is <input type="text" name="q15"> is said first. </li>
+            <!-- <li>When introducing two people, the name of the person who is <input type="text" name="q15"> is said first. </li> -->
           </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
+        </form>
         
       </section>
 
@@ -542,6 +556,9 @@
             <li>The female guest of honor sits to the <input type="text" name="q18a"> of the <input type="text" name="q18b">.</li>
             <li>If it works out where the seating is male/female, the host and hostess sit at opposite ends of the table. If not, the host sits in his traditional seat at the end of the table. The male <input type="text" name="q19a"> may sit across from him in the hostess' seat. The hostess then sits on his <input type="text" name="q19b">. </li>
           </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
         </form>
         
       </section>
@@ -673,6 +690,9 @@ If something is broken, simply apologize, and make
               It's impolite to put lipstick on at the table.
             </li>
           </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
         </form>
 
       </section>
@@ -780,12 +800,15 @@ If something is broken, simply apologize, and make
             <li>A cover should allow for <input type="text" name="q26a" size="5"> to <input type="text" name="q26b"> inches to prevent feeling cramped.</li>
             <li>Place cards should be used when there are <input type="text" name="q27"> or more people.</li>
             <li>When you leave the table after dinner, place your napkin loosely to the <input type="text" name="q28"> of your plate.</li>
-            <li>If the salad is served with the main course, the salad plate will be set to <input type="text" name="q29">.</li>
+            <li>If the salad is served with the main course, the salad plate will be set to the <input type="text" name="q29"> of the place setting.</li>
             <li>The water glass on your <input type="text" name="q30"> is yours.</li>
             <li>The butter plate on your <input type="text" name="q31"> is yours.</li>
             <li>When you remove a spoon from a glass or cup, place it on the <input type="text" name="q32"> dish, not the tablecloth.</li>
             <li>The place setting pictured in this section would traditionally have been considered a less formal meal. It has a <input type="text" name="q33a">, and <input type="text" name="q33b">, but no service plate, champagne flute or <input type="text" name="q33c">.</li>
           </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
         </form>
       </section>
         
@@ -829,19 +852,19 @@ If something is broken, simply apologize, and make
         fill it too high, and even if it's red, many people swirl their wine to 
         enjoy the bouquet (aroma) of the wine. Swirling is considered an art, and it 
         cannot be done properly if the glass is too full.</p>
-        <p><strong>Water glass</strong> - This is the largest glass. It will normally 
+        <p><strong class="special">Water glass</strong> - This is the largest glass. It will normally 
         be filled when you're seated. It's to the far left of the glasses, just 
         above your knife. It's held by the bowl of the glass.</p>
-        <p>Red wine - This glass is a little smaller than the water 
+        <p><strong class="special">Red wine</strong> - This glass is a little smaller than the water 
         glass and will be just to the right of the water glass. This glass will be 
         held by the bowl of the glass.</p>
-        <p>White wine - This glass is yet a little smaller than the 
+        <p><strong class="special">White wine</strong> - This glass is yet a little smaller than the 
         red wine glass and will be the far right glass. It is held by the stem. 
         White wine is served chilled, and if you hold it by the bowl, your hand will 
         warm the wine. If you serve two wines, white and red wine, make sure you 
         have two glasses for each guest. </p>
 
-        <p>Champagne glass - This glass is either tall and very thin 
+        <p><strong class="special">Champagne glass</strong> - This glass is either tall and very thin 
         or short and wide. It will be just to the right of the water glass and a 
         little bit behind or to the left of the red wine glass. Champagne is served 
         chilled, so hold it by the stem also.</p>
@@ -933,8 +956,11 @@ If something is broken, simply apologize, and make
             a <input type="text" name="q36b">; he simply remains seated with a polite smile. </li>
             <li>If you are taking things from a serving dish, the spoon goes <input type="text" name="q37a"> the food, and the fork, tines down, holds it from <input type="text" name="q37b"> to steady it.</li>
             <li>Wait until the hostess lifts her <input type="text" name="q38"> as the signal to begin eating. </li>
-            <li>If you're asked by the hostess to pour the wine, fill the glass only to <input type="text" name="q39">.</li>
+            <li>If you're asked by the hostess to pour the wine, fill the glass only to <input type="text" name="q39a"> to <input type="text" name="q39b"> full.</li>
           </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
         </form>
         
       </section>
@@ -951,15 +977,15 @@ If something is broken, simply apologize, and make
         section we'll discuss which silverware to use. (Don't be afraid. It's all 
         very simple.) The courses for a traditionally formal meal are discussed <a href="#formal">here</a>. </p>
         
-        <p><em>First course </em>- Normally seafood or soup, which can be 
+        <p><strong class="special">First course</strong> - Normally seafood or soup, which can be 
         hot or cold. This course is the appetizer. The seafood and soup may also be 
         served separately. </p>
         
-        <p><em>Second course </em>- Traditionally, this course was the 
+        <p><strong class="special">Second course</strong> - Traditionally, this course was the 
         main course of fish, meat, or chicken. However, now it is much more common 
         for salad to be served as the second course. </p>
         
-        <p><em>Sorbet </em>(pronounced soarbay) - Many fine restaurants 
+        <p><strong class="special">Sorbet</strong> (pronounced <em>soar-bay</em>) - Many fine restaurants 
         now serve a sorbet after the salad to cleanse your palate before your main 
         course. (That just means it freshens your taste buds so the dressing from 
         the salad doesn't overpower your dinner.) </p>
@@ -969,12 +995,13 @@ If something is broken, simply apologize, and make
         glass. It is usually served with its own tiny spoon. If not, use the dessert 
         spoon above your plate. In some restaurants, you don't order this course, 
         they just bring it to you. It's a lovely idea. </p>
-        <p><em>Third course</em> - is now normally the meat, fish, or 
+
+        <p><strong class="special">Third course</strong> - is now normally the meat, fish, or 
         chicken. The salad used to be served at this point, and some hostesses and 
         restaurants still do so. It is also acceptable to have the salad and main 
         course served at the same time. </p>
         
-        <p><em>Fourth course</em> - is usually dessert. </p>
+        <p><strong class="special">Fourth course</strong> - is usually dessert. </p>
 
         <p>Between courses, the server may remove the crumbs on your 
         table for you. This is done with a clean napkin and a plate, a small 
@@ -995,62 +1022,62 @@ If something is broken, simply apologize, and make
         <p>The silver is set in the order it is to be used, with the 
         first course's silver being on the outside. Forks (tines up) on the left, 
         knives (cutting edge pointing in), and spoons on the right. </p>
-        <em>
-        <p>Remember, if the silverware you need isn't on the table 
-        when you sit down, they will bring it when that course is served.</p>
+        
+        <p><em>Remember, if the silverware you need isn't on the table 
+        when you sit down, they will bring it when that course is served.</em></p>
 
-        </em><p><em>Seafood fork</em> - This fork is the smallest fork. It 
+        <p><strong class="special">Seafood fork</strong> - This fork is the smallest fork. It 
         will have only three tines. (Tines are the teeth.) It's used with seafood, 
         such as oysters and shrimp. It may be found to the far left of your place 
         setting, or it may be resting in the head of your far right soup spoon. </p>
-        <em>
-        </em><p><em>Salad fork</em> - This fork is larger than the seafood 
+
+        <p><strong class="special">Salad fork</strong> - This fork is larger than the seafood 
         fork, but smaller than your dinner fork. It will have four tines but will be 
         shorter and fatter than your regular fork.</p>
-        <em>
-        </em><p><em>Dinner fork</em> - This fork will look like the ones 
+
+        <p><strong class="special">Dinner fork</strong> - This fork will look like the ones 
         you're used to seeing at home (may be called a place fork).</p>
 
-        <em>
-        </em><p><em>Dessert fork</em> - This fork is smaller than your regular 
-        fork, and you can recognize it by its placement. It will either be above 
+
+        <p><strong class="special">Dessert fork</strong> - This fork is smaller than your regular 
+        fork, and you can recognize it by its placstrongent. It will either be above 
         your plate, or it will be set at the table during dessert.</p>
-        <em>
-        </em><p><em>Soup spoon</em> - This spoon will normally be at the far 
+
+        <p><strong class="special">Soup spoon</strong> - This spoon will normally be at the far 
         right of your place setting or will be delivered with the soup. 
         Traditionally there were two different types of soup spoons; one for the 
         cream soup and one for any other soup. The cream soup spoon had a round 
         head, and the other soup spoon was shaped a little more like a teaspoon. 
         This spoon may be used as the place spoon. </p>
-        <em>
-        </em><p><em>Iced tea spoon</em> - This spoon is longer than a regular 
+
+        <p><strong class="special">Iced tea spoon</strong> - This spoon is longer than a regular 
         spoon, and the head may be a little smaller than the teaspoon. </p>
 
-        <em>
-        </em><p><em>Teaspoon</em> - This spoon will look like the ones you 
+
+        <p><strong class="special">Teaspoon</strong> - This spoon will look like the ones you 
         normally see at home.</p>
-        <em>
-        </em><p><em>Dessert spoon</em> - This spoon is to be used with dessert 
+
+        <p><strong class="special">Dessert spoon</strong> - This spoon is to be used with dessert 
         and will either be above your plate, or it will be placed on the table at 
         dessert.</p>
-        <em>
-        </em><p><em>Dinner knife</em> - This knife is like the one you're 
+
+        <p><strong class="special">Dinner knife</strong> - This knife is like the one you're 
         familiar with at home (may be called a place knife).</p>
 
-        <em>
-        </em><p><em>Fish knife</em> - This knife is used with the fish course 
+
+        <p><strong class="special">Fish knife</strong> - This knife is used with the fish course 
         seen in very formal dinners. It has a sharp point used to remove bones. The 
         separate fish course isn't seen much in this country.</p>
-        <em>
-        </em><p><em>Salad knife - </em>This knife is a bit small than your 
+
+        <p><strong class="special">Salad knife - </strong>This knife is a bit small than your 
         dinner knife and is used to cut your salad if necessary. They make cutting 
         your salad acceptable, yea!</p>
-        <em>
-        </em><p><em>Steak knife</em> - This knife is sharper and may have a 
+
+        <p><strong class="special">Steak knife</strong> - This knife is sharper and may have a 
         serrated edge so you can cut meat with it.</p>
 
-        <em>
-        </em><p><em>Butter spreader</em>- This knife is smaller and is found 
+
+        <p><strong class="special">Butter spreader</strong>- This knife is smaller and is found 
         on your butter plate. It is used to butter your bread.</p>
         <p>Why isn't all the silverware on the table when you sit 
         down? It is inappropriate to set the table with more than three forks and 
@@ -1061,8 +1088,8 @@ If something is broken, simply apologize, and make
         <h3>What do you call silverware made of silver?</h3>
         
 
-        <p>Silverware is also called flatware. So silverware made of 
-        silver is sterling flatware. Spoons, forks, knives, and serving utensils are 
+        <p>Silverware is also called <em>flatware</em>. So silverware made of 
+        silver is <em>sterling flatware</em>. Spoons, forks, knives, and serving utensils are 
         all considered flatware. Knives used to be called cutlery and were not 
         considered flatware. Today knives are also considered flatware. </p>
         <p>Sterling is flatware made primarily from sterling silver. 
@@ -1128,6 +1155,9 @@ If something is broken, simply apologize, and make
             <li><input type="text" name="q59"></li>
             <li><input type="text" name="q60"></li>
           </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
         </form>
 
       </section>
@@ -1317,6 +1347,9 @@ If something is broken, simply apologize, and make
               When taking something out of your mouth, it is best to spit into a napkin.
             </li>
           </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
         </form>
       
       </section>
@@ -1346,7 +1379,7 @@ If something is broken, simply apologize, and make
         
         <h3>A Seven Course Meal</h3>
 
-        <ol>
+        <ol class="min">
           <li>Soup, fruit cup, shrimp, oysters</li>
           <li>Fish</li>
           <li>Meat, roast or fowl and a vegetable</li>
@@ -1358,7 +1391,7 @@ If something is broken, simply apologize, and make
 
         <h3>A Nine Course Meal</h3>
         
-        <ol>
+        <ol class="min">
           <li>Caviar, clams, fruits, shrimp, or oysters </li>
           <li>Soup</li>
           <li>Fish</li>
@@ -1372,7 +1405,7 @@ If something is broken, simply apologize, and make
 
         <h3>A Ten Course Meal, Yikes!</h3>
 
-        <ol>
+        <ol class="min">
           <li>Caviar</li>
           <li>Fruits</li>
           <li>Oysters or clams </li>
@@ -1511,11 +1544,11 @@ If something is broken, simply apologize, and make
         
         <form>
           <ol start="67">
-            <li>The letters in the word "tips" stand for four words:
-              <br>T<input type="text" name="q67a">
-              <br>I<input type="text" name="q67b">
-              <br>P<input type="text" name="q67c">
-              <br>S<input type="text" name="q67d"> 
+            <li class="tips">The letters in the word "tips" stand for four words:
+              <br><strong class="special">T</strong><input type="text" name="q67a">
+              <br><strong class="special">I</strong><input type="text" name="q67b">
+              <br><strong class="special">P</strong><input type="text" name="q67c">
+              <br><strong class="special">S</strong><input type="text" name="q67d"> 
             </li>
 
             <li>If you receive good service, leave <input type="text" name="q68a"> to <input type="text" name="q68b"> percent.</li>
@@ -1528,6 +1561,9 @@ If something is broken, simply apologize, and make
               <br>a 20 percent tip? <input type="text" name="q70b">
             </li>
           </ol>
+
+          <input type="submit" value="Check My Answers">
+          <p class="error-message">Oops! Looks like you forgot a few questions up there.</p>
         </form>
 
       </section>
@@ -1551,10 +1587,24 @@ If something is broken, simply apologize, and make
 
     </div>
 
+    <div id="success" class="modal">
+
+      <div class="close"></div>
+
+      <h3>Lookin' good, fine diner.</h3>
+
+      <div class="points">
+        <div class="earned">8</div>
+        <div class="total">12</div>
+      </div>
+
+    </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/jquery-1.10.2.min.js"><\/script>')</script>
 
-    <script src="assets/js/validate.min.js"><\/script>
+    <script src="assets/js/validate.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
