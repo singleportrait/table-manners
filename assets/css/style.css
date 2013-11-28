@@ -68,12 +68,15 @@ $base-line-height: 24px;
 
 body {
   background: #fffefe;
-  font: 18px/24px "Adobe Caslon Pro";
+  font: 20px/30px "adobe-garamond-pro", "Adobe Caslon Pro";
   color: #270e09; }
 
 div.content {
-  max-width: 800px;
+  max-width: 610px;
   margin: 0 auto; }
+
+section.header {
+  text-align: center; }
 
 /* Text */
 p {
@@ -87,14 +90,18 @@ strong {
 
 a {
   text-decoration: none;
-  color: #aa140a; }
+  color: #97a900;
+  font-weight: 500; }
   a:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: #697600; }
 
-h1, h2, h3, h4 {
-  font-family: 'Caslon 3';
+h1, h2, h3, h4, h5 {
+  font-family: 'brandon-grotesque';
+  font-weight: 300;
+  text-transform: uppercase;
   text-align: center;
-  color: #aa140a; }
+  color: black; }
 
 h1 {
   font-size: 2em;
@@ -102,41 +109,117 @@ h1 {
 
 h2 {
   font-size: 1.66em;
-  margin: 1em 3em 0;
-  padding: 1em;
-  border-top: 1px solid #c7a8a9; }
+  margin: 2em -2em 0;
+  padding: 2em 0 .5em;
+  border-top: 3px solid #e4ff00; }
 
 h3 {
   font-size: 1.33em;
   margin: 1.5em 0 0; }
 
 h4 {
-  text-transform: uppercase; }
+  color: #b1c600;
+  font-weight: 500;
+  font-size: 1.33em;
+  margin-top: 2em; }
+
+h5 {
+  color: #b1c600;
+  font-weight: 500; }
 
 /* Lists */
-nav {
-  overflow: hidden; }
-  nav ol {
-    width: 50%;
-    float: left; }
+nav ol {
+  width: 50%;
+  float: left; }
+  nav ol li {
+    line-height: 30px; }
+    nav ol li a {
+      color: black; }
 
 ol, ul {
-  padding: 1em 2em; }
+  padding: 0em 2em 1em; }
 
 ol li {
+  line-height: 45px;
   list-style-type: decimal-leading-zero; }
-  ol li.error {
-    color: red; }
+  ol li.error:before {
+    color: #f26c4f; }
 
 li {
   margin: .5em 0; }
 
+ol {
+  counter-reset: li;
+  /* Initiate a counter */
+  margin-left: 0;
+  /* Remove the default left margin */
+  padding-left: 0;
+  /* Remove the default left padding */ }
+  ol[start="6"] {
+    counter-reset: li 5; }
+  ol[start="11"] {
+    counter-reset: li 10; }
+  ol[start="12"] {
+    counter-reset: li 11; }
+  ol[start="15"] {
+    counter-reset: li 14; }
+  ol[start="20"] {
+    counter-reset: li 19; }
+  ol[start="24"] {
+    counter-reset: li 23; }
+  ol[start="26"] {
+    counter-reset: li 25; }
+  ol[start="34"] {
+    counter-reset: li 33; }
+  ol[start="40"] {
+    counter-reset: li 39; }
+  ol[start="61"] {
+    counter-reset: li 60; }
+  ol[start="64"] {
+    counter-reset: li 63; }
+  ol[start="67"] {
+    counter-reset: li 66; }
+  ol li {
+    position: relative;
+    /* Create a positioning context */
+    margin: 0 0 0 -0.25em;
+    /* Send numbers out to the left */
+    padding: 4px 8px;
+    /* Add some spacing around the content */
+    list-style: none;
+    /* Disable the normal item numbering */ }
+    ol li:before {
+      content: counter(li) ".";
+      /* Use the counter as content */
+      counter-increment: li;
+      /* Increment the counter by 1 */
+      /* Position and style the number */
+      position: absolute;
+      top: -2px;
+      left: -2em;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 2em;
+      /* Some space between the number and the content in browsers that support
+         generated content but not positioning it (Camino 2 is one example) */
+      margin-right: 8px;
+      padding: 5px;
+      font-weight: 600;
+      font-family: "brandon-grotesque", Helvetica, sans-serif;
+      text-align: center;
+      color: #b1c600; }
+
 /* Forms */
 input {
-  padding: 6px 6px 3px;
+  padding: 2px 6px 0px;
   margin: 4px;
-  border: 1px solid #c7a8a9;
-  border-radius: 3px;
-  font: 18px/24px "Adobe Caslon Pro"; }
+  background: #fcfcfc;
+  border: none;
+  border-bottom: 4px solid #c8df00;
+  font-family: "brandon-grotesque", Helvetica, sans-serif;
+  font-size: 1.15em; }
   input[type='text'] {
-    width: 160px; }
+    min-width: 9em; }
+  input:focus {
+    outline: 0; }
