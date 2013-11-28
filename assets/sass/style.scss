@@ -1,5 +1,7 @@
 @import "reset";
 
+@import "compass/css3";
+
 /* VARS */
 
 $font-size:   20px;
@@ -78,7 +80,7 @@ section.header {
   text-align: center;
   background: #333;
   color: white;
-  height: 100vh;
+  height: 100vh; /* viewport height !! */
 }
 
 @mixin button() {
@@ -387,7 +389,7 @@ input {
   background: rgba(0,0,0,0.8);
   z-index: 99999;
   opacity:0;
-  //@include transition(opacity 400ms ease-in);
+  @include transition(opacity 400ms ease-in);
   pointer-events: none;
 
   &:target {
@@ -400,10 +402,10 @@ input {
     position: relative;
     margin: 10% auto;
     padding: 5px 20px 13px 20px;
-    //@include border-radius(3px);
+    @include border-radius(3px);
     background: #fff;
   }
-  .modal-close {
+  .close {
     background: #606061;
     color: #FFFFFF;
     line-height: 25px;
@@ -414,8 +416,8 @@ input {
     width: 24px;
     text-decoration: none;
     font-weight: bold;
-    //@include border-radius(3px);
-    //@include box-shadow(1px 1px 3px #000);
+    @include border-radius(3px);
+    @include box-shadow(1px 1px 3px #000);
     &:hover { background: #00d9ff; }
   }
 }
