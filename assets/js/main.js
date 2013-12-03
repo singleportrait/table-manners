@@ -5,7 +5,7 @@
   $(document).ready(function() {
 
     // Select radio buttons with <span> elements
-    console.log($('form span'));
+    //console.log($('form span'));
     $('form span').click(function(e) {
       $(this).prev('input').prop('checked', true);
       $(this).parent('li').removeClass('error');
@@ -17,6 +17,22 @@
         // only if the target itself has been clicked
         location.hash = 'close';
       }
+    });
+
+    // Dropdown menu: toggle on and off, and close if you select a menu item
+    $('.contents').on('click',function(e) {
+      $('#contents').toggle('display');
+      e.preventDefault();
+    });
+
+    $('#contents').on('click', function(e) {
+
+      if(e.target && e.target.nodeName == "A") {
+
+        console.log("List item ",e.target," was clicked!");
+        $('#contents').toggle('display');
+      }
+
     });
 
   });
@@ -79,22 +95,98 @@ var submit_section = function(form) {
 
     console.log('fields: ', $fields_array);
 
-    incorrect_answers = 0;
+    var correct_answers = 0;
 
-    for (var j = 0; j < $fields_array.length; j++) {
+    var total_questions = $fields_array.length;
+
+    for (var j = 0; j < total_questions; j++) {
       console.log("field: ", $fields_array[j]);
       console.log("correct answer: ", answers_json[$fields_array[j].name]);
+
       if ($fields_array[j].value == answers_json[$fields_array[j].name]) {
+
+        // Correct
+        Quiz.answers[$fields_array[j].name] = 1;
+
         console.log('#' + $fields_array[j].name + ' correct');
+
+        correct_answers++;
+
       } else {
+
+        // Incorrect
+        Quiz.answers[$fields_array[j].name] = 0;
+
         $('input[type="radio"][name="' + $fields_array[j].name + '"][value="' + answers_json[$fields_array[j].name] + '"]').addClass('selected');
         $('input[type="text"][name="' + $fields_array[j].name + '"]').val(answers_json[$fields_array[j].name]).addClass('selected');
       }
     }
 
+    console.log(correct_answers + ' answers correct out of ' + total_questions);
+
+    console.log($(form).attr('name'));
+
+    Quiz.sections[$(form).attr('name')] = {
+      'correct': correct_answers,
+      'total':   total_questions
+    }
+
+    Quiz.update_modal($(form).attr('name'));
+
+    Quiz.update_points();
+
   }
 
 };
+
+/**
+ * Enable header links to scroll user to appropriate vertical location on page
+*/
+// $('header ul a').click(function(e) {
+//   var sectionID = $(this).attr('href');
+//   var section   = $('section' + sectionID);
+//   if (section.length > 0) {
+//     e.preventDefault();
+//     console.log(section);
+//     console.log(section[0].offsetTop);
+//     $('body,html').animate({scrollTop: section[0].offsetTop-50},400, 'swing');
+//     console.log($('body'));
+//   }
+// });
+
+/**
+* Enable logo to scroll user to top of page
+*/
+// $('header h1 a').click(function(e) {
+//   e.preventDefault();
+//   $('body,html').animate({scrollTop: 0},600, 'swing');
+// });
+
+
+// Quiz object
+var Quiz = {
+  answers: {},
+  sections: {},
+
+  total_points: function() {
+    var total_points = 0;
+      $.each(this.answers, function(p,v) {
+        console.log(p, ': ', v);
+        total_points += v;
+      });
+    return total_points;
+  },
+
+  update_points: function() {
+    $('#total_points').html(this.total_points());
+  },
+
+  update_modal: function(form_set) {
+    $('#section_points').html(this.sections[form_set].correct);
+    $('#section_total').html(this.sections[form_set].total);
+  }
+
+}
 
 
 var answers_json = {

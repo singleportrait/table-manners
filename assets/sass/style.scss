@@ -79,8 +79,8 @@ $dark_bg: #333;
   }
 }
 
-@mixin circle() {
-  width:41px; height:41px; /* the width and height of the fake elements */
+@mixin circle($radius) {
+  width:#{$radius}; height:#{$radius}; /* the width and height of the fake elements */
 
   border: 4px solid $accent;
   cursor: pointer;
@@ -134,26 +134,30 @@ header {
   z-index: 1;
   background: $dark_bg;
   width: 100%;
-  padding: 1em 0;
+  padding: .5em 0;
   > a {
     float: left;
-    margin: 1em 1em 0;
+    &:hover {
+      color: white;
+    }
+  }
+  p, a {
+    color: $accent;
+    margin: 0 1em;
   }
   .top {
-    @include circle;
-    @include sprites-sprite(up_arrow, $offset-x: 7px,  $offset-y: 7px);
+    @include circle(37px);
+    @include sprites-sprite(up_arrow, $offset-x: 6px,  $offset-y: 3px);
     @extend .hidden-text;
   }
   .contents, p {
     @extend .featured-text;
     font-size: 16px;
-    line-height: 41px;
+    line-height: 37px;
   }
   p {
     float: right;
     text-align: right;
-    color: $link;
-    margin: 1em 1em 0;
   }
   .points {
     float: right;
@@ -161,28 +165,43 @@ header {
     margin: 0;
     div {
       font-size: 1.75em;
-    }
-    .total {
-      margin-top: .25em;
+      &.total {
+        margin-top: .2em;
+      }
     }
   }
   h3.logo {
     text-align: center;
     margin-top: 0;
+    color: white;
   }
   .dropdown {
-    padding: 1em 0;
     position: absolute;
     font-size: 16px;
-    line-height: .7em;
-    top: 6em;
+    line-height: 1em;
+    top: 57px; // 37px + 1em
+    left: 1em;
+    display: none;
     background: $dark_bg;
+    ul {
+      padding: 1em 0;
+      border-top: 2px solid $accent;
+      margin: 0 1em;
+    }
+    a {
+      color: white;
+    }
   }
 }
 
 div.content {
   max-width: 610px;
   margin: 0 auto;
+
+  section {
+    padding: 2em 0;
+    top: 2em;
+  }
 }
 
 section.header {
@@ -435,7 +454,7 @@ input {
       top:0.25em;  /* we're moving it slightly down for alignment purposes */
       left:-2px; /* we're moving it slightly to the left */
       margin: 0 .5em 0 0;
-      @include circle;
+      @include circle(41px);
       font: 500 1.25em/1.5em $font_accent_family;
       background-color: white;
       &:hover {
@@ -448,6 +467,10 @@ input {
     &.selected + span {
       background-color: $error;
       border-color: $error;
+      ~ span {
+        background-color: #ccc;
+        border-color: #ccc;
+      }
     }
   }
 
@@ -466,11 +489,11 @@ input {
 .points {
   font-family: $font_accent_family;
   margin: .5em 0;
-  @include sprites-sprite(divider, $offset-x: 30%, $offset-y: -1px);
+  @include sprites-sprite(divider, $offset-x: 27%, $offset-y: -2px);
   @include clearfix;
   div {
     font-size: 3em;
-    line-height: 1em;
+    //line-height: 1em;
     padding: 0 .35em;
     &.earned {
       text-align: right;
