@@ -40,6 +40,9 @@
 }());
 
 
+// This sucks, but I have to refactor later
+
+/* Set up validation for all forms */
 var validator = new FormValidator('set_1', [
   {name:'q1',rules:'required'}, 
   {name:'q2',rules:'required'}, 
@@ -58,6 +61,128 @@ var validator = new FormValidator('set_1', [
   test_fields(errors, event, this.form);
 
 });
+
+var validator = new FormValidator('set_2', [
+  {name:'q12a',rules:'required'}, 
+  {name:'q12b',rules:'required'}, 
+  {name:'q13',rules:'required'}, 
+  {name:'q14',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
+var validator = new FormValidator('set_3', [
+  {name:'q15',rules:'required'}, 
+  {name:'q16',rules:'required'}, 
+  {name:'q17',rules:'required'}, 
+  {name:'q18a',rules:'required'},
+  {name:'q18b',rules:'required'},
+  {name:'q19a',rules:'required'},
+  {name:'q19b',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
+var validator = new FormValidator('set_4', [
+  {name:'q20',rules:'required'}, 
+  {name:'q21',rules:'required'}, 
+  {name:'q22a',rules:'required'}, 
+  {name:'q22b',rules:'required'},
+  {name:'q23',rules:'required'},
+  {name:'q24',rules:'required'},
+  {name:'q25',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
+var validator = new FormValidator('set_5', [
+  {name:'q26a',rules:'required'}, 
+  {name:'q26b',rules:'required'}, 
+  {name:'q27',rules:'required'}, 
+  {name:'q28',rules:'required'},
+  {name:'q29',rules:'required'},
+  {name:'q30',rules:'required'},
+  {name:'q31',rules:'required'},
+  {name:'q32',rules:'required'},
+  {name:'q33a',rules:'required'},
+  {name:'q33b',rules:'required'},
+  {name:'q33c',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
+var validator = new FormValidator('set_6', [
+  {name:'q34a',rules:'required'}, 
+  {name:'q34b',rules:'required'}, 
+  {name:'q35',rules:'required'}, 
+  {name:'q36a',rules:'required'},
+  {name:'q36b',rules:'required'},
+  {name:'q37a',rules:'required'},
+  {name:'q37b',rules:'required'},
+  {name:'q38',rules:'required'},
+  {name:'q39a',rules:'required'},
+  {name:'q39b',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
+var validator = new FormValidator('set_7', [
+  {name:'q40',rules:'required'}, 
+  {name:'q41',rules:'required'}, 
+  {name:'q42',rules:'required'}, 
+  {name:'q43',rules:'required'},
+  {name:'q44',rules:'required'},
+  {name:'q45',rules:'required'},
+  {name:'q46',rules:'required'},
+  {name:'q47',rules:'required'},
+  {name:'q48',rules:'required'},
+  {name:'q49',rules:'required'},
+  {name:'q50',rules:'required'}, 
+  {name:'q51',rules:'required'}, 
+  {name:'q52',rules:'required'}, 
+  {name:'q53',rules:'required'},
+  {name:'q54',rules:'required'},
+  {name:'q55',rules:'required'},
+  {name:'q56',rules:'required'},
+  {name:'q57',rules:'required'},
+  {name:'q58',rules:'required'},
+  {name:'q59',rules:'required'},
+  {name:'q60',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
+var validator = new FormValidator('set_8', [
+  {name:'q61',rules:'required'}, 
+  {name:'q62',rules:'required'}, 
+  {name:'q63',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
+var validator = new FormValidator('set_9', [
+  {name:'q64',rules:'required'},
+  {name:'q65',rules:'required'},
+  {name:'q66',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
+var validator = new FormValidator('set_10', [
+  {name:'q67a',rules:'required'},
+  {name:'q67b',rules:'required'},
+  {name:'q67c',rules:'required'},
+  {name:'q67d',rules:'required'},
+  {name:'q68a',rules:'required'},
+  {name:'q68b',rules:'required'},
+  {name:'q69a',rules:'required'},
+  {name:'q69b',rules:'required'},
+  {name:'q70a',rules:'required'},
+  {name:'q70c',rules:'required'}
+], function(errors, event) {
+  test_fields(errors, event, this.form);
+});
+
 
 var test_fields = function(errors, event, form) {
 
@@ -135,6 +260,8 @@ var submit_section = function(form) {
 
     Quiz.update_points();
 
+    $(form).find('input[type="submit"]').attr('disabled', 'disabled')
+
   }
 
 };
@@ -165,7 +292,9 @@ var submit_section = function(form) {
 
 // Quiz object
 var Quiz = {
+
   answers: {},
+  
   sections: {},
 
   total_points: function() {
@@ -216,7 +345,7 @@ var answers_json = {
   "q20"  : "chair",
   "q21"  : "right",
   "q22a" : "alone",
-  "q22a" : "embarrassment",
+  "q22b" : "embarrassment",
   "q23"  : "rise",
   "q24"  : "false",
   "q25"  : "true",
@@ -232,7 +361,7 @@ var answers_json = {
   "q33b" : "coffee cup",
   "q33c" : "place card",
   "q34a" : "white wine",
-  "q34a" : "champagne",
+  "q34b" : "champagne",
   "q35"  : "white",
   "q36a" : "glass",
   "q36b" : "sip",
@@ -258,7 +387,7 @@ var answers_json = {
   "q54"  : "salad fork",
   "q55"  : "dinner fork",
   "q56"  : "one inch from the edge of the table",
-  "q57"  : "dinner fork",
+  "q57"  : "dinner knife",
   "q58"  : "salad knife",
   "q59"  : "dinner spoon",
   "q60"  : "soup spoon",
@@ -272,9 +401,10 @@ var answers_json = {
   "q67b" : "insure",
   "q67c" : "proper",
   "q67d" : "service",
-  "q68"  : "15, 20 percent",
-  "q69a"  : "$4.35", 
+  "q68a" : "15",
+  "q68b" : "20",
+  "q69a" : "$4.35", 
   "q69b" : "5.80",
-  "q70a"  : "$5.25",
-  "q70b" : "7.00",
+  "q70a" : "$5.25",
+  "q70b" : "$7.00",
 }

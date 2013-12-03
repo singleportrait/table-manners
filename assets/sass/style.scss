@@ -18,7 +18,11 @@ $lime:      #e4ff00;
 
 $lime2:     #f6ff00;
 
-$lime_alt:  darken($lime2, 3%);
+$salmon:    salmon;
+
+$green:     lightgreen;
+
+$lime_alt:  darken($green, 3%);
 
 $lime_med:  #b1c600;
 
@@ -480,6 +484,12 @@ input {
 
   &[type="submit"] {
     @include button;
+    @include transition(background-color);
+    &:disabled {
+      background-color: #ccc;
+      cursor: default;
+      //color: #eee;
+    }
   }
 }
 
@@ -548,4 +558,24 @@ input {
     text-decoration: none;
     &:hover { color: #555; }
   }
+
+  // Modal points
+  .points {
+    @include sprites-sprite(divider, $offset-x: 50%, $offset-y: -2px);
+    position: relative;
+    div {
+      line-height: 1em;
+      width: 47%;
+      &.total {
+        text-align: left;
+      }
+    }
+    p {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+    }
+  }
+
 }
