@@ -56,7 +56,58 @@ $error: $red;
 
 $error_text: $red_brighter;
 
+$dark_bg: #333;
 
+
+/* Mixins */
+
+@mixin button() {
+  margin: 0 auto;
+  display: block;
+  float: none;
+  background: $accent;
+  text-transform: uppercase;
+  padding: 7px 12px 4px;
+  border-bottom: 0;
+  cursor: pointer;
+  font-family: $font_accent_family;
+  font-size: 1.2em;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    background: darken($accent, 1%);
+  }
+}
+
+@mixin circle() {
+  width:41px; height:41px; /* the width and height of the fake elements */
+
+  border: 4px solid $accent;
+  cursor: pointer;
+  @include border-radius(21px);
+  text-align: center;
+}
+
+/* Utilities */
+
+.hidden-text {
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.featured-text {
+  font-family: $font_accent_family;
+  text-transform: uppercase;
+}
+
+/* Sprite */
+
+/* Signup Sprite */
+$sprites-spacing: 20px;
+//$sprites-sprite-dimensions: true;
+$sprites: sprite-map("sprites/*.png", $spacing: 20px); /* sdknf */
+
+@import "sprites/*.png";
 
 /* Typography */
 /*$base-font-size:   18px;
@@ -78,6 +129,57 @@ body {
   color: $brown_dark;
 }
 
+header {
+  position: fixed;
+  z-index: 1;
+  background: $dark_bg;
+  width: 100%;
+  padding: 1em 0;
+  > a {
+    float: left;
+    margin: 1em 1em 0;
+  }
+  .top {
+    @include circle;
+    @include sprites-sprite(up_arrow, $offset-x: 7px,  $offset-y: 7px);
+    @extend .hidden-text;
+  }
+  .contents, p {
+    @extend .featured-text;
+    font-size: 16px;
+    line-height: 41px;
+  }
+  p {
+    float: right;
+    text-align: right;
+    color: $link;
+    margin: 1em 1em 0;
+  }
+  .points {
+    float: right;
+    color: white;
+    margin: 0;
+    div {
+      font-size: 1.75em;
+    }
+    .total {
+      margin-top: .25em;
+    }
+  }
+  h3.logo {
+    text-align: center;
+    margin-top: 0;
+  }
+  .dropdown {
+    padding: 1em 0;
+    position: absolute;
+    font-size: 16px;
+    line-height: .7em;
+    top: 6em;
+    background: $dark_bg;
+  }
+}
+
 div.content {
   max-width: 610px;
   margin: 0 auto;
@@ -85,27 +187,11 @@ div.content {
 
 section.header {
   text-align: center;
-  background: #333;
+  background: $dark_bg;
   color: white;
   height: 100vh; /* viewport height !! */
-}
-
-@mixin button() {
-  margin: 0 auto;
-  display: block;
-  float: none;
-  background: $accent;
-  text-transform: uppercase;
-  padding: 7px 12px 4px;
-  border-bottom: 0;
-  cursor: pointer;
-  font-family: $font_accent_family;
-  font-size: 1.2em;
-  color: black;
-  &:hover {
-    text-decoration: none;
-    background: darken($accent, 1%);
-  }
+  z-index: 2;
+  position: relative;
 }
 
 
@@ -137,8 +223,7 @@ em {
 strong {
   font-weight: 700;
   &.special {
-    font-family: $font_accent_family;
-    text-transform: uppercase;
+    @extend .featured-text;
   }
 }
 
@@ -176,7 +261,7 @@ h1, h2, h3, h4, h5 {
   h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     color: black;
-    margin: .5em 0;
+    margin: 1.5em 0 .5em;
   }
 }
 
@@ -210,6 +295,7 @@ h5 {
   font-weight: 500;
   text-align: left;
 }
+
 
 /* Lists */
 
@@ -261,7 +347,8 @@ ol {
 
     &.tips {
       strong {
-        width: 1em;
+        width: .4em;
+        text-align: right;
         display: inline-block;
       }
     }
@@ -348,14 +435,9 @@ input {
       top:0.25em;  /* we're moving it slightly down for alignment purposes */
       left:-2px; /* we're moving it slightly to the left */
       margin: 0 .5em 0 0;
-      width:41px; height:41px; /* the width and height of the fake elements */
-
-      border: 4px solid $accent;
-      background-color: white;
-      cursor: pointer;
+      @include circle;
       font: 500 1.25em/1.5em $font_accent_family;
-      @include border-radius(21px);
-      text-align: center;
+      background-color: white;
       &:hover {
         background-color: lighten($accent, 40%);
       }
@@ -383,12 +465,13 @@ input {
 
 .points {
   font-family: $font_accent_family;
-  font-size: 3em;
-  line-height: 1em;
   margin: .5em 0;
+  @include sprites-sprite(divider, $offset-x: 30%, $offset-y: -1px);
   @include clearfix;
   div {
-    width: 47%;
+    font-size: 3em;
+    line-height: 1em;
+    padding: 0 .35em;
     &.earned {
       text-align: right;
       float: left;

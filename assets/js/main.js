@@ -60,11 +60,10 @@ var test_fields = function(errors, event, form) {
   } else {
 
     event.preventDefault();
-    console.log(form);
 
     submit_section(form);
 
-    //location.hash = 'success';
+    location.hash = 'success';
     
   }
 
@@ -107,7 +106,7 @@ var answers_json = {
   "q5"   : "gloves",
   "q6"   : "true",
   "q7"   : "false",
-  "q8"   : "true",
+  "q8"   : "false",
   "q9"   : "true",
   "q10"  : "false",
   "q11"  : "true",

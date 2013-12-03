@@ -83,6 +83,28 @@ legend {
 }
 
 /* VARS */
+/* Mixins */
+/* Utilities */
+/* line 93, ../sass/style.scss */
+.hidden-text, header .top {
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/* line 98, ../sass/style.scss */
+.featured-text, header .contents, header p, strong.special {
+  font-family: "brandon-grotesque", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+/* Sprite */
+/* Signup Sprite */
+/* sdknf */
+/* line 50, sprites/*.png */
+.sprites-sprite, header .top, .points {
+  background: url('/assets/images/sprites-scdc9108d5f.png') no-repeat;
+}
+
 /* Typography */
 /*$base-font-size:   18px;
 $base-line-height: 24px;
@@ -91,71 +113,137 @@ $base-line-height: 24px;
 */
 /*  +adjust-font-size-to(15px); */
 /* .calluna, .garamond, & .minion */
-/* line 71, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 75, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 body {
   background: #fffefe;
   font: 20px/30px "adobe-garamond-pro", "Adobe Caslon Pro";
   color: #270e09;
 }
 
-/* line 81, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
+header {
+  position: fixed;
+  z-index: 1;
+  background: #333333;
+  width: 100%;
+  padding: 1em 0;
+}
+/* line 138, ../sass/style.scss */
+header > a {
+  float: left;
+  margin: 1em 1em 0;
+}
+/* line 142, ../sass/style.scss */
+header .top {
+  width: 41px;
+  height: 41px;
+  /* the width and height of the fake elements */
+  border: 4px solid #e7f000;
+  cursor: pointer;
+  -webkit-border-radius: 21px;
+  -moz-border-radius: 21px;
+  -ms-border-radius: 21px;
+  -o-border-radius: 21px;
+  border-radius: 21px;
+  text-align: center;
+  background-position: 7px -105px;
+}
+/* line 147, ../sass/style.scss */
+header .contents, header p {
+  font-size: 16px;
+  line-height: 41px;
+}
+/* line 152, ../sass/style.scss */
+header p {
+  float: right;
+  text-align: right;
+  color: #97a900;
+  margin: 1em 1em 0;
+}
+/* line 158, ../sass/style.scss */
+header .points {
+  float: right;
+  color: white;
+  margin: 0;
+}
+/* line 162, ../sass/style.scss */
+header .points div {
+  font-size: 1.75em;
+}
+/* line 165, ../sass/style.scss */
+header .points .total {
+  margin-top: .25em;
+}
+/* line 169, ../sass/style.scss */
+header h3.logo {
+  text-align: center;
+  margin-top: 0;
+}
+/* line 173, ../sass/style.scss */
+header .dropdown {
+  padding: 1em 0;
+  position: absolute;
+  font-size: 16px;
+  line-height: .7em;
+  top: 6em;
+  background: #333333;
+}
+
+/* line 183, ../sass/style.scss */
 div.content {
   max-width: 610px;
   margin: 0 auto;
 }
 
-/* line 86, ../sass/style.scss */
+/* line 188, ../sass/style.scss */
 section.header {
   text-align: center;
-  background: #333;
+  background: #333333;
   color: white;
   height: 100vh;
   /* viewport height !! */
+  z-index: 2;
+  position: relative;
 }
 
 /* Text */
-/* line 114, ../sass/style.scss */
+/* line 200, ../sass/style.scss */
 p {
   margin: 1em 0;
 }
-/* line 116, ../sass/style.scss */
+/* line 202, ../sass/style.scss */
 p.error-message {
   visibility: hidden;
   text-align: center;
   color: #fd4b24;
 }
-/* line 121, ../sass/style.scss */
+/* line 207, ../sass/style.scss */
 p.error-message.visible {
   visibility: visible;
 }
-/* line 126, ../sass/style.scss */
+/* line 212, ../sass/style.scss */
 p.subhead {
   margin: 0;
   font-size: 1.5em;
   font-style: italic;
 }
 
-/* line 133, ../sass/style.scss */
+/* line 219, ../sass/style.scss */
 em {
   font-style: italic;
 }
 
-/* line 137, ../sass/style.scss */
+/* line 223, ../sass/style.scss */
 strong {
   font-weight: 700;
 }
-/* line 139, ../sass/style.scss */
-strong.special {
-  font-family: "brandon-grotesque", Helvetica, sans-serif;
-  text-transform: uppercase;
-}
 
-/* line 145, ../sass/style.scss */
+/* line 230, ../sass/style.scss */
 blockquote {
   font-family: brandon-grotesque;
   font-size: 1.35em;
@@ -166,18 +254,18 @@ blockquote {
   border-bottom: 1px solid #e7f000;
 }
 
-/* line 155, ../sass/style.scss */
+/* line 240, ../sass/style.scss */
 a {
   text-decoration: none;
   color: #97a900;
   font-weight: 500;
 }
-/* line 159, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 a:hover {
   text-decoration: underline;
   color: #777777;
 }
-/* line 163, ../sass/style.scss */
+/* line 248, ../sass/style.scss */
 a.button {
   margin: 0 auto;
   display: block;
@@ -192,34 +280,34 @@ a.button {
   color: black;
   display: inline-block;
 }
-/* line 105, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 a.button:hover {
   text-decoration: none;
   background: #e2eb00;
 }
 
-/* line 169, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 h1, h2, h3, h4, h5 {
   font-family: 'brandon-grotesque';
   font-weight: 300;
   text-align: center;
 }
 
-/* line 176, ../sass/style.scss */
+/* line 261, ../sass/style.scss */
 .main h1, .main h2, .main h3, .main h4, .main h5 {
   text-transform: uppercase;
   color: black;
-  margin: .5em 0;
+  margin: 1.5em 0 .5em;
 }
 
-/* line 183, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 h1 {
   font-size: 4em;
   line-height: 1em;
   padding-top: 1em;
 }
 
-/* line 189, ../sass/style.scss */
+/* line 274, ../sass/style.scss */
 h2 {
   font-size: 1.66em;
   margin: 2em -2em 0;
@@ -227,13 +315,13 @@ h2 {
   border-top: 3px solid #e7f000;
 }
 
-/* line 196, ../sass/style.scss */
+/* line 281, ../sass/style.scss */
 h3 {
   font-size: 1.33em;
   margin: 1.5em 0 0;
 }
 
-/* line 201, ../sass/style.scss */
+/* line 286, ../sass/style.scss */
 h4 {
   color: #b1c600;
   font-weight: 500;
@@ -241,7 +329,7 @@ h4 {
   margin-top: 2em;
 }
 
-/* line 208, ../sass/style.scss */
+/* line 293, ../sass/style.scss */
 h5 {
   color: #b1c600;
   font-weight: 500;
@@ -249,63 +337,64 @@ h5 {
 }
 
 /* Lists */
-/* line 218, ../sass/style.scss */
+/* line 304, ../sass/style.scss */
 nav ol {
   width: 50%;
   float: left;
   padding-left: 2em;
 }
-/* line 222, ../sass/style.scss */
+/* line 308, ../sass/style.scss */
 nav ol li {
   line-height: 30px;
 }
-/* line 224, ../sass/style.scss */
+/* line 310, ../sass/style.scss */
 nav ol li a {
   color: black;
 }
 
-/* line 233, ../sass/style.scss */
+/* line 319, ../sass/style.scss */
 ol, ul {
   padding: 0em 2em 1em;
 }
 
-/* line 241, ../sass/style.scss */
+/* line 327, ../sass/style.scss */
 ol li {
   line-height: 45px;
   list-style-type: decimal-leading-zero;
 }
-/* line 245, ../sass/style.scss */
+/* line 331, ../sass/style.scss */
 ol li.error:before {
   color: #f26c4f;
 }
-/* line 249, ../sass/style.scss */
+/* line 335, ../sass/style.scss */
 ol li.error input[type="text"] {
   border-bottom-color: #f26c4f;
 }
-/* line 253, ../sass/style.scss */
+/* line 339, ../sass/style.scss */
 ol li.error input[type="radio"] + span {
   border-color: #f26c4f;
 }
-/* line 255, ../sass/style.scss */
+/* line 341, ../sass/style.scss */
 ol li.error input[type="radio"] + span:hover {
   background-color: #f9bbae;
 }
-/* line 263, ../sass/style.scss */
+/* line 349, ../sass/style.scss */
 ol li.tips strong {
-  width: 1em;
+  width: .4em;
+  text-align: right;
   display: inline-block;
 }
-/* line 270, ../sass/style.scss */
+/* line 357, ../sass/style.scss */
 ol.min li {
   line-height: 30px;
 }
 
-/* line 276, ../sass/style.scss */
+/* line 363, ../sass/style.scss */
 li {
   margin: .5em 0;
 }
 
-/* line 283, ../sass/style.scss */
+/* line 370, ../sass/style.scss */
 ol {
   counter-reset: li;
   /* Initiate a counter */
@@ -314,55 +403,55 @@ ol {
   padding-left: 0;
   /* Remove the default left padding */
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="6"] {
   counter-reset: li 5;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="11"] {
   counter-reset: li 10;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="12"] {
   counter-reset: li 11;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="15"] {
   counter-reset: li 14;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="20"] {
   counter-reset: li 19;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="24"] {
   counter-reset: li 23;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="26"] {
   counter-reset: li 25;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="34"] {
   counter-reset: li 33;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="40"] {
   counter-reset: li 39;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="61"] {
   counter-reset: li 60;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="64"] {
   counter-reset: li 63;
 }
-/* line 288, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 ol[start="67"] {
   counter-reset: li 66;
 }
-/* line 292, ../sass/style.scss */
+/* line 379, ../sass/style.scss */
 ol li {
   position: relative;
   /* Create a positioning context */
@@ -373,7 +462,7 @@ ol li {
   list-style: none;
   /* Disable the normal item numbering */
 }
-/* line 299, ../sass/style.scss */
+/* line 386, ../sass/style.scss */
 ol li:before {
   content: counter(li) ".";
   /* Use the counter as content */
@@ -398,7 +487,7 @@ ol li:before {
 }
 
 /* Forms */
-/* line 327, ../sass/style.scss */
+/* line 414, ../sass/style.scss */
 input {
   padding: 2px 6px 0px;
   margin: 4px;
@@ -408,15 +497,15 @@ input {
   font-family: "brandon-grotesque", Helvetica, sans-serif;
   font-size: 1.2em;
 }
-/* line 335, ../sass/style.scss */
+/* line 422, ../sass/style.scss */
 input[type='text'] {
   width: 10em;
 }
-/* line 337, ../sass/style.scss */
+/* line 424, ../sass/style.scss */
 input[type='text'].selected {
   border-bottom-color: #f26c4f;
 }
-/* line 344, ../sass/style.scss */
+/* line 431, ../sass/style.scss */
 input[type='radio'] + span {
   display: block;
   float: left;
@@ -432,34 +521,34 @@ input[type='radio'] + span {
   height: 41px;
   /* the width and height of the fake elements */
   border: 4px solid #e7f000;
-  background-color: white;
   cursor: pointer;
-  font: 500 1.25em/1.5em "brandon-grotesque", Helvetica, sans-serif;
   -webkit-border-radius: 21px;
   -moz-border-radius: 21px;
   -ms-border-radius: 21px;
   -o-border-radius: 21px;
   border-radius: 21px;
   text-align: center;
+  font: 500 1.25em/1.5em "brandon-grotesque", Helvetica, sans-serif;
+  background-color: white;
 }
-/* line 359, ../sass/style.scss */
+/* line 441, ../sass/style.scss */
 input[type='radio'] + span:hover {
   background-color: #fdffbd;
 }
-/* line 363, ../sass/style.scss */
+/* line 445, ../sass/style.scss */
 input[type='radio']:checked + span {
   background-color: #e7f000;
 }
-/* line 366, ../sass/style.scss */
+/* line 448, ../sass/style.scss */
 input[type='radio'].selected + span {
   background-color: #f26c4f;
   border-color: #f26c4f;
 }
-/* line 372, ../sass/style.scss */
+/* line 454, ../sass/style.scss */
 input:focus {
   outline: 0;
 }
-/* line 376, ../sass/style.scss */
+/* line 458, ../sass/style.scss */
 input[type="submit"] {
   margin: 0 auto;
   display: block;
@@ -473,39 +562,40 @@ input[type="submit"] {
   font-size: 1.2em;
   color: black;
 }
-/* line 105, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 input[type="submit"]:hover {
   text-decoration: none;
   background: #e2eb00;
 }
 
 /* Quiz Stuff */
-/* line 384, ../sass/style.scss */
+/* line 466, ../sass/style.scss */
 .points {
   font-family: "brandon-grotesque", Helvetica, sans-serif;
-  font-size: 3em;
-  line-height: 1em;
   margin: .5em 0;
+  background-position: 30% -1px;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 390, ../sass/style.scss */
+/* line 471, ../sass/style.scss */
 .points div {
-  width: 47%;
+  font-size: 3em;
+  line-height: 1em;
+  padding: 0 .35em;
 }
-/* line 392, ../sass/style.scss */
+/* line 475, ../sass/style.scss */
 .points div.earned {
   text-align: right;
   float: left;
 }
-/* line 396, ../sass/style.scss */
+/* line 479, ../sass/style.scss */
 .points div.total {
   float: right;
   margin: .5em 0 0;
 }
 
 /* Modal */
-/* line 407, ../sass/style.scss */
+/* line 490, ../sass/style.scss */
 .modal {
   position: fixed;
   top: 0;
@@ -522,12 +612,12 @@ input[type="submit"]:hover {
   pointer-events: none;
   text-align: center;
 }
-/* line 420, ../sass/style.scss */
+/* line 503, ../sass/style.scss */
 .modal:target {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 425, ../sass/style.scss */
+/* line 508, ../sass/style.scss */
 .modal > div {
   width: 400px;
   position: relative;
@@ -542,7 +632,7 @@ input[type="submit"]:hover {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 434, ../sass/style.scss */
+/* line 517, ../sass/style.scss */
 .modal .close {
   position: absolute;
   color: black;
@@ -553,7 +643,7 @@ input[type="submit"]:hover {
   text-align: center;
   text-decoration: none;
 }
-/* line 443, ../sass/style.scss */
+/* line 526, ../sass/style.scss */
 .modal .close:hover {
   color: #555;
 }
