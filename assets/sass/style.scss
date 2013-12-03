@@ -10,7 +10,7 @@ $line-height: 30px;
 
 $font: #{$font-size}/#{$line-height} 'adobe-garamond-pro', 'Adobe Caslon Pro';
 
-$font_accent_family: "brandon-grotesque", Helvetica, sans-serif;
+$font_accent_family: "brandon-grotesque", 'Helvetica Neue', sans-serif;
 
 $red:       rgb(170,20,10);
 
@@ -20,7 +20,9 @@ $lime2:     #f6ff00;
 
 $salmon:    salmon;
 
-$green:     lightgreen;
+$green:     #95e4b7;
+
+$orange:    #f59a63;
 
 $lime_alt:  darken($green, 3%); // this was $lime2
 
@@ -42,7 +44,7 @@ $accent_text: $lime_med;
 
 $button_bg: $lime;
 
-$link: $lime_dark;
+$link: darken($lime_alt, 30%);
 
 $link_hover: #777;
 
@@ -203,7 +205,7 @@ div.content {
   margin: 0 auto;
 
   section {
-    padding: 2em 0;
+    padding: 2em 0 0;
     top: 2em;
   }
 }
@@ -215,6 +217,9 @@ section.header {
   height: 100vh; /* viewport height !! */
   z-index: 2;
   position: relative;
+  p.author {
+    margin: 4em 0;
+  }
 }
 
 
@@ -251,7 +256,7 @@ strong {
 }
 
 blockquote {
-  font-family: brandon-grotesque;
+  font-family: $font_accent_family;
   font-size: 1.35em;
   line-height: 1.3em;
   margin: 1em -11em;
@@ -275,16 +280,18 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'brandon-grotesque';
+  font-family: $font_accent_family;
   font-weight: 300;
   text-align: center;
 }
 
 .main {
+  h1, h3, h4, h5 {
+    margin: 1.5em 0 .5em;
+  }
   h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     color: black;
-    margin: 1.5em 0 .5em;
   }
 }
 
@@ -296,7 +303,7 @@ h1 {
 
 h2 {
   font-size: 1.66em;
-  margin: 2em -2em 0;
+  margin: 0 -2em;
   padding: 2em 0 .5em;
   border-top: 3px solid $accent;
 }
@@ -370,8 +377,7 @@ ol {
 
     &.tips {
       strong {
-        width: .4em;
-        text-align: right;
+        width: 1.25em;
         display: inline-block;
       }
     }
@@ -439,12 +445,12 @@ input {
   margin: 4px;
   background: #fcfcfc;
   border: none;
-  border-bottom: 4px solid $lime_alt;
+  border-bottom: 3px solid $lime_alt;
   font-family: $font_accent_family;
   font-size: 1.2em;
   &[type='text'] {
     width: 10em;
-    &.selected {
+    &.correct {
       border-bottom-color: $error;
     }
   }
@@ -468,13 +474,13 @@ input {
     &:checked + span {
       background-color: $accent;
     }
-    &.selected + span {
+    &.correct + span {
       background-color: $error;
       border-color: $error;
-      ~ span {
-        background-color: #ccc;
-        border-color: #ccc;
-      }
+    }
+    &.incorrect + span {
+      background-color: #ccc;
+      border-color: #ccc;
     }
   }
 
@@ -497,11 +503,11 @@ input {
 /* Quiz Stuff */
 
 .points {
-  font-family: $font_accent_family;
   margin: .5em 0;
   @include sprites-sprite(divider, $offset-x: 27%, $offset-y: -2px);
   @include clearfix;
   div {
+    font-family: $font_accent_family;
     font-size: 3em;
     //line-height: 1em;
     padding: 0 .35em;
@@ -561,21 +567,25 @@ input {
 
   // Modal points
   .points {
-    @include sprites-sprite(divider, $offset-x: 50%, $offset-y: -2px);
+    @include sprites-sprite(divider, $offset-x: 40%, $offset-y: -2px);
+    margin: 2em 0;
     position: relative;
     div {
       line-height: 1em;
-      width: 47%;
+      width: 37%;
       &.total {
         text-align: left;
+        margin-right: 20%;
       }
     }
     p {
       position: absolute;
-      right: 0;
+      right: 10%;
       bottom: 0;
       margin: 0;
+      font-style: italic;
     }
+
   }
 
 }

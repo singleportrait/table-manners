@@ -242,8 +242,12 @@ var submit_section = function(form) {
         // Incorrect
         Quiz.answers[$fields_array[j].name] = 0;
 
-        $('input[type="radio"][name="' + $fields_array[j].name + '"][value="' + answers_json[$fields_array[j].name] + '"]').addClass('selected');
-        $('input[type="text"][name="' + $fields_array[j].name + '"]').val(answers_json[$fields_array[j].name]).addClass('selected');
+        var correct_radio = $('input[type="radio"][name="' + $fields_array[j].name + '"][value="' + answers_json[$fields_array[j].name] + '"]');
+
+        console.log(correct_radio);
+        $(correct_radio).addClass('correct');
+        $(correct_radio).siblings('input[type="radio"]').addClass('incorrect');
+        $('input[type="text"][name="' + $fields_array[j].name + '"]').val(answers_json[$fields_array[j].name]).addClass('correct');
       }
     }
 
@@ -253,7 +257,8 @@ var submit_section = function(form) {
 
     Quiz.sections[$(form).attr('name')] = {
       'correct': correct_answers,
-      'total':   total_questions
+      'total':   total_questions,
+      'grade':   correct_answers / total_questions
     }
 
     Quiz.update_modal($(form).attr('name'));
@@ -313,6 +318,28 @@ var Quiz = {
   update_modal: function(form_set) {
     $('#section_points').html(this.sections[form_set].correct);
     $('#section_total').html(this.sections[form_set].total);
+
+    this.update_section(form_set);
+  },
+
+  update_section: function(form_set) {
+
+    var success_message = '';
+
+    var grade = this.sections[form_set].grade;
+
+    if (grade <= .25) {
+      success_message = "Oh! Maybe you'd rather have a food fight? That's okay, too!";
+    } else if (grade <= .50) {
+      success_message = "Well, who can keep all those forks straight, anyway?";
+    } else if (grade <= .75) {
+      success_message = "Lookin' good, fine diner!";
+    } else {
+      success_message = "A toast in your honor, special guest!";
+    }
+
+    $('#success_message').html(success_message);
+
   }
 
 }
