@@ -40,7 +40,7 @@ $accent:       $lime_alt;
 
 $accent_light: $lime_light;
 
-$accent_text: $lime_med;
+$accent_text: darken($lime_alt, 20%);
 
 $button_bg: $lime;
 
@@ -106,6 +106,26 @@ $dark_bg: #333;
   text-transform: uppercase;
 }
 
+.display {
+  display: block !important;
+}
+
+.column {
+  width: 50%;
+  float: left;
+  &.omega {
+    margin-left: 5%;
+    width: 45%;
+  }
+}
+
+hr {
+  clear: both;
+  border: 1px solid $accent;
+  border-bottom: 0;
+}
+
+
 /* Sprite */
 
 /* Signup Sprite */
@@ -147,24 +167,29 @@ header {
       color: white;
     }
   }
+
   p, a {
     color: $accent;
     margin: 0 1em;
   }
+
   .top {
     @include circle(37px);
     @include sprites-sprite(up_arrow, $offset-x: 6px,  $offset-y: 3px);
     @extend .hidden-text;
   }
+
   .contents, p {
     @extend .featured-text;
     font-size: 16px;
     line-height: 37px;
   }
+
   p {
     float: right;
     text-align: right;
   }
+
   .points {
     float: right;
     color: white;
@@ -176,11 +201,13 @@ header {
       }
     }
   }
+
   h3.logo {
     text-align: center;
     margin-top: 0;
     color: white;
   }
+
   .dropdown {
     position: absolute;
     font-size: 16px;
@@ -222,6 +249,24 @@ section.header {
   }
 }
 
+footer {
+  background-color: $dark_bg;
+  padding: 2em 0;
+  margin-top: 4em;
+  @include clearfix;
+  .content {
+    div {
+      @extend .column;
+    }
+  }
+  a {
+    color: white;
+  }
+  h5 {
+    text-transform: uppercase;
+  }
+}
+
 
 /* Text */
 
@@ -259,8 +304,8 @@ blockquote {
   font-family: $font_accent_family;
   font-size: 1.35em;
   line-height: 1.3em;
-  margin: 1em -11em;
-  padding: 1em 10em;
+  margin: 1em 0;
+  padding: 1em 0;
   border-top: 1px solid $accent;
   border-bottom: 1px solid $accent;
 }
@@ -291,7 +336,6 @@ h1, h2, h3, h4, h5 {
   }
   h1, h2, h3, h4, h5 {
     text-transform: uppercase;
-    color: black;
   }
 }
 
@@ -326,10 +370,69 @@ h5 {
   text-align: left;
 }
 
+/* Images */
+
+img.basic-setup {
+  left: 50%;
+  position: relative;
+  margin-left: -505px;
+}
+
+.place-card {
+  margin: 0 auto;
+  display: block;
+}
+
+.wine-glasses {
+  float: left;
+  margin-right: 1em;
+  max-width: 260px;
+  img {
+    max-width: 260px;
+    margin: -1.5em 0;
+  }
+}
+
+.glasses {
+  font-size: 17px;
+  line-height: 1.5em;
+  margin: 0 2%;
+  padding: 1em 0;
+  @include clearfix;
+  border-top: 1px solid $accent;
+  border-bottom: 1px solid $accent;
+  img {
+    float: left;
+    margin: 0 1em;
+  }
+  div {
+    float: left;
+    width: 25%;
+  }
+  @media (max-width: 1400px) {
+    div {
+      width: 50%;
+      padding: 0 2.5%;
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 1400px) {
+    img.skinny {
+      margin-left: 2em;
+    }
+    p {
+      margin-left: 160px;
+    }
+
+  }
+}
+
+
 
 /* Lists */
 
 nav {
+  @include clearfix;
 
   ol {
     width: 50%;
@@ -455,8 +558,8 @@ input {
     }
   }
   &[type='radio'] {
-    //position: absolute; 
-    //left: -999em; 
+    position: absolute; 
+    left: -999em; 
     + span {
       display: block;
       float: left; /* make this fake elements inline block */
@@ -504,13 +607,13 @@ input {
 
 .points {
   margin: .5em 0;
-  @include sprites-sprite(divider, $offset-x: 27%, $offset-y: -2px);
+  @include sprites-sprite(divider, $offset-x: 41%, $offset-y: -2px);
   @include clearfix;
   div {
     font-family: $font_accent_family;
     font-size: 3em;
-    //line-height: 1em;
     padding: 0 .35em;
+    width: 2em;
     &.earned {
       text-align: right;
       float: left;
@@ -520,8 +623,32 @@ input {
       margin: .5em 0 0;
     }
   }
+  &.feature {
+    @include sprites-sprite(divider, $offset-x: 39%, $offset-y: -2px);
+    margin: 2em 0;
+    position: relative;
+    div {
+      line-height: 1em;
+      width: 37%;
+      &.total {
+        text-align: left;
+        margin-right: 20%;
+      }
+    }
+    p {
+      position: absolute;
+      right: 15%;
+      bottom: 0;
+      margin: 0;
+      font-style: italic;
+    }
+  }
+  &.conclusion {
+    p {
+      right: 31%;
+    }
+  }
 }
-
 
 
 /* Modal */
@@ -565,27 +692,107 @@ input {
     &:hover { color: #555; }
   }
 
-  // Modal points
-  .points {
-    @include sprites-sprite(divider, $offset-x: 40%, $offset-y: -2px);
-    margin: 2em 0;
-    position: relative;
-    div {
-      line-height: 1em;
-      width: 37%;
-      &.total {
-        text-align: left;
-        margin-right: 20%;
-      }
+}
+
+@media screen and (max-width: 700px) {
+
+  body {
+    font-size: $font-size*.9;
+    line-height: $line-height*.9;
+  }
+
+  header {
+    h3 {
+      display: none;
     }
     p {
-      position: absolute;
-      right: 10%;
-      bottom: 0;
-      margin: 0;
-      font-style: italic;
+      margin-right: -.4em;
     }
+    a {
+      margin: 0 .35em;
+    }
+    .points {
+      font-size: .8em;
+      line-height: 37px;
+    }
+    .dropdown {
+      top: 55px;
+    }
+  }
 
+  section.header {
+    h1 {
+      padding-top: .75em;
+    }
+    p.author {
+      margin: 3em 0;
+    }
+  }
+
+  .content {
+    padding: 0 .5em;
+    img {
+      max-width: 100%;
+      margin-left: 0;
+      left: 0;
+    }
+  }
+
+  h2 {
+    margin: 0 .5em;
+    line-height: 1.4em;
+  }
+
+  .wine-glasses {
+    float: none;
+    margin: 0 auto;
+    img {
+      margin: 0;
+    }
+  }
+
+  .glasses {
+    font-size: $font-size*.75;
+    line-height: 1.4em;
+    div:nth-child(3) {
+      clear: both;
+    }
+  }
+
+  nav ol {
+    width: 95%;
+    padding-bottom: 0;
+    margin-left: 1em;
+  }
+
+  ol {
+    margin-left: 2em;
+    padding: 0 0 1em;
+    li {
+      line-height: $line-height;
+    }
+    span + label {
+      display: block;
+      clear: both;
+      padding-bottom: .75em;
+    }
+    input[type='radio'] + span {
+      top: -.25em;
+    }
+    img {
+      margin-left: -1.5em;
+    }
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .modal {
+    > div {
+      max-width: 95%;
+      margin-top: 30%;
+    }
   }
 
 }
