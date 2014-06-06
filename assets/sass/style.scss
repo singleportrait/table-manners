@@ -8,61 +8,27 @@
 $font-size:   20px;
 $line-height: 30px;
 
-$font: #{$font-size}/#{$line-height} 'adobe-garamond-pro', 'Adobe Caslon Pro';
+$font: #{$font-size}/#{$line-height} 'adobe-garamond-pro', 'Adobe Caslon Pro', serif;
+$font_accent_family: "brandon-grotesque", 'Avenir', 'Helvetica Neue', sans-serif;
+$font_header_family: 'Belizio', 'adobe-garamond-pro';
 
-$font_accent_family: "brandon-grotesque", 'Helvetica Neue', sans-serif;
-
-$red:       rgb(170,20,10);
-
-$lime:      #e4ff00;
-
-$lime2:     #f6ff00;
-
-$salmon:    salmon;
-
-$green:     #95e4b7;
-
-$orange:    #f59a63;
-
-$lime_alt:  darken($green, 3%); // this was $lime2
-
-$lime_med:  #b1c600;
-
+$green:      #95e4b7;
 $lime_light: #fcffde;
 
-$lime_dark: #97a900;
-
-$red:       #f26c4f;
-
-$red_brighter: #fd4b24;
-
-$accent:       $lime_alt;
-
+$accent: darken($green, 3%);
 $accent_light: $lime_light;
+$accent_text: darken($accent, 20%);
 
-$accent_text: darken($lime_alt, 20%);
+$body_bg: #fffefe; // beige
+$dark_bg: #3a2e2e;
 
-$button_bg: $lime;
+$dark_text: rgb(39,14,9); // dark brown
 
-$link: darken($lime_alt, 30%);
+$link: darken($accent, 30%);
+$link_hover: lighten($dark_bg, 40%);
 
-$link_hover: #777;
-
-$beige: rgb(255,254,250);
-
-$beige: #fffefe;
-
-$brown_dark: rgb(39,14,9);
-
-$brown: rgb(94,26,24);
-
-$brown_tint: #c7a8a9;
-
-$error: $red;
-
-$error_text: $red_brighter;
-
-$dark_bg: #333;
+$error: #f26c4f; // red
+$error_text: #fd4b24;  // brighter red
 
 
 /* Mixins */
@@ -87,7 +53,6 @@ $dark_bg: #333;
 
 @mixin circle($radius) {
   width:#{$radius}; height:#{$radius}; /* the width and height of the fake elements */
-
   border: 4px solid $accent;
   cursor: pointer;
   @include border-radius(21px);
@@ -127,8 +92,6 @@ hr {
 
 
 /* Sprite */
-
-/* Signup Sprite */
 $sprites-spacing: 20px;
 //$sprites-sprite-dimensions: true;
 $sprites: sprite-map("sprites/*.png", $spacing: 20px); /* sdknf */
@@ -150,9 +113,9 @@ $base-line-height: 24px;
 }
 
 body {
-  background: $beige;
+  background: $body_bg;
   font: $font;
-  color: $brown_dark;
+  color: $dark_text;
 }
 
 header {
@@ -286,6 +249,12 @@ p {
     margin: 0;
     font-size: 1.5em;
     font-style: italic;
+  }
+  &.note {
+    text-align: center;
+    clear: both;
+    font-style: italic;
+    color: $link_hover;
   }
 }
 
@@ -434,6 +403,13 @@ img.basic-setup {
 nav {
   @include clearfix;
 
+  @media screen and (min-width: 700px) {
+    width: 110%;
+    margin-left: -5%;
+    ol { padding-right: .5em; }
+  }
+
+
   ol {
     width: 50%;
     float: left;
@@ -446,6 +422,8 @@ nav {
     }
 
   }
+
+  span { color: $link_hover; }
 
 }
 
@@ -513,8 +491,6 @@ ol {
     margin:0 0 0 -.25em; /* Send numbers out to the left */
     padding:4px 8px; /* Add some spacing around the content */
     list-style:none; /* Disable the normal item numbering */
-    //border-top:2px solid #666;
-    //background:#f6f6f6;
     &:before {
       content:counter(li) '.'; /* Use the counter as content */
       counter-increment:li; /* Increment the counter by 1 */
@@ -522,17 +498,11 @@ ol {
       position:absolute;
       top:-2px;
       left:-2em;
-      -moz-box-sizing:border-box;
-      -webkit-box-sizing:border-box;
-      box-sizing:border-box;
       width:2em;
       /* Some space between the number and the content in browsers that support
          generated content but not positioning it (Camino 2 is one example) */
       margin-right:8px;
       padding:5px;
-      //border-top:2px solid #666;
-      //color:#fff;
-      //background:#666;
       font-weight:600;
       font-family: $font_accent_family;
       text-align:center;
@@ -548,7 +518,7 @@ input {
   margin: 4px;
   background: #fcfcfc;
   border: none;
-  border-bottom: 3px solid $lime_alt;
+  border-bottom: 3px solid $accent;
   font-family: $font_accent_family;
   font-size: 1.2em;
   &[type='text'] {

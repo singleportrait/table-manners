@@ -3,7 +3,6 @@
 forms = [
   {name: 'set_1', fields: ['q1','q2','q3', 'q4a','q4b','q5','q6','q7','q8','q9','q10','q11']},
   {name: 'set_2', fields: ['q12a','q12b','q13','q14']}
-
 ]
 
 var requireds = {};

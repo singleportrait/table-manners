@@ -16,7 +16,6 @@ $(document).ready(function() {
     $(this).parent('li').removeClass('error');
   });
 
-
   /* Close modal window when clicking on outside of it */
   $(".modal").on('click', function(e) {
     if(e.target == this || e.target == $('.close')[0]){ 
