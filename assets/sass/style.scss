@@ -12,15 +12,14 @@ $font: #{$font-size}/#{$line-height} 'adobe-garamond-pro', 'Adobe Caslon Pro', s
 $font_accent_family: "brandon-grotesque", 'Avenir', 'Helvetica Neue', sans-serif;
 $font_header_family: 'Belizio', 'adobe-garamond-pro';
 
-$green:      #95e4b7;
-$lime_light: #fcffde;
-
-$accent: darken($green, 3%);
-$accent_light: $lime_light;
-$accent_text: darken($accent, 20%);
-
 $body_bg: #fffefe; // beige
-$dark_bg: #3a2e2e;
+$dark_bg: #3a2e2e; // brown
+
+// pretty pink beige: #aa7966
+
+$accent: adjust-hue(saturate(lighten($dark_bg, 35%), 30%), 170deg); // bluish
+$accent_light: #fcffde; // palest babiest beige
+$accent_text: darken($accent, 20%);
 
 $dark_text: rgb(39,14,9); // dark brown
 
@@ -210,6 +209,15 @@ section.header {
   p.author {
     margin: 4em 0;
   }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/intro_bg.png) center center no-repeat transparent;
+  }
 }
 
 footer {
@@ -316,8 +324,9 @@ h1 {
 
 h2 {
   font-size: 1.66em;
+  line-height: 1.3em;
   margin: 0 -2em;
-  padding: 2em 0 .5em;
+  padding: 1.5em 0 .5em;
   border-top: 3px solid $accent;
 }
 
@@ -691,12 +700,16 @@ input {
   }
 
   section.header {
+    height: auto;
+    padding-bottom: 2em;
+
     h1 {
-      padding-top: .75em;
+      padding-top: .55em;
     }
     p.author {
-      margin: 3em 0;
+      margin: 2em 0;
     }
+    h2 br { display: none; }
   }
 
   .content {
@@ -709,8 +722,10 @@ input {
   }
 
   h2 {
+    font-size: 1.5em;
     margin: 0 .5em;
     line-height: 1.4em;
+    padding-top: 1em;
   }
 
   .wine-glasses {
