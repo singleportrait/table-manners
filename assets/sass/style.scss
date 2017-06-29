@@ -148,6 +148,11 @@ header {
   box-sizing: content-box;
   background-color: #fff;
   margin-bottom: 4rem;
+
+  @include if_narrower_than($text_breakpoint) {
+    width: calc(100% - 2rem);
+    padding: 2rem 1rem;
+  }
 }
 
 .chapter--first {
