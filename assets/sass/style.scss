@@ -45,16 +45,6 @@ $sprites: sprite-map("sprites/*.png", $spacing: 20px); /* sdknf */
 
 @import "sprites/*.png";
 
-/* Typography */
-/*$base-font-size:   18px;
-$base-line-height: 24px;
-
-+establish-baseline($base-font-size)
-*/
-/*  +adjust-font-size-to(15px); */
-
-/* .calluna, .garamond, & .minion */
-
 * {
   box-sizing: border-box;
 }
