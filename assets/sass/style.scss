@@ -8,20 +8,21 @@
 $font-size:   20px;
 $line-height: 30px;
 
-$font: #{$font-size}/#{$line-height} 'adobe-garamond-pro', 'Adobe Caslon Pro', serif;
+$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font_accent_family: "brandon-grotesque", 'Avenir', 'Helvetica Neue', sans-serif;
 $font_header_family: 'Belizio', 'adobe-garamond-pro';
 
-$body_bg: #fffefe; // beige
-$dark_bg: #3a2e2e; // brown
+$body_bg: #f0f0f0;
+$dark_bg: #222;
 
 // pretty pink beige: #aa7966
 
 $accent: adjust-hue(saturate(lighten($dark_bg, 35%), 30%), 170deg); // bluish
+$accent: #F0BE78;
 $accent_light: #fcffde; // palest babiest beige
 $accent_text: darken($accent, 20%);
 
-$dark_text: rgb(39,14,9); // dark brown
+$dark_text: #222;
 
 $link: darken($accent, 30%);
 $link_hover: lighten($dark_bg, 40%);
@@ -113,8 +114,9 @@ $base-line-height: 24px;
 
 body {
   background: $body_bg;
-  font: $font;
+  font-family: $font;
   color: $dark_text;
+  line-height: 1.5;
 }
 
 header {
