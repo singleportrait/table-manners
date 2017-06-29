@@ -1,72 +1,10 @@
 @import "reset";
+@import "variables";
+@import "mixins";
 
 @import "compass/utilities/general/clearfix";
 @import "compass/css3";
 
-/* VARS */
-
-$font-size:   20px;
-$line-height: 30px;
-
-$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font_accent_family: "brandon-grotesque", 'Avenir', 'Helvetica Neue', sans-serif;
-$font_header_family: 'Belizio', 'adobe-garamond-pro';
-
-$body_bg: #f0f0f0;
-$dark_bg: #222;
-
-// pretty pink beige: #aa7966
-
-$accent: adjust-hue(saturate(lighten($dark_bg, 35%), 30%), 170deg); // bluish
-$accent: #F0BE78;
-$accent_light: #fcffde; // palest babiest beige
-$accent_text: darken($accent, 20%);
-
-$dark_text: #222;
-
-$link: darken($accent, 30%);
-$link_hover: lighten($dark_bg, 40%);
-
-$error: #f26c4f; // red
-$error_text: #fd4b24;  // brighter red
-
-$shape_breakpoint: 550px;
-
-$text_max_width: 610px;
-
-/* Mixins */
-
-@mixin button() {
-  margin: 0 auto;
-  display: block;
-  float: none;
-  background: $accent;
-  text-transform: uppercase;
-  padding: 7px 12px 4px;
-  border-bottom: 0;
-  cursor: pointer;
-  font-family: $font_accent_family;
-  font-size: 1.2em;
-  color: black;
-  &:hover {
-    text-decoration: none;
-    background: darken($accent, 1%);
-  }
-}
-
-@mixin circle($radius) {
-  width:#{$radius}; height:#{$radius}; /* the width and height of the fake elements */
-  border: 3px solid $accent;
-  cursor: pointer;
-  @include border-radius(21px);
-  text-align: center;
-}
-
-@mixin if_narrower_than($width) {
-  @media (max-width: $width) {
-    @content;
-  }
-}
 
 /* Utilities */
 
