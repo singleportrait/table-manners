@@ -30,6 +30,9 @@ $link_hover: lighten($dark_bg, 40%);
 $error: #f26c4f; // red
 $error_text: #fd4b24;  // brighter red
 
+$shape_breakpoint: 550px;
+
+$text_max_width: 610px;
 
 /* Mixins */
 
@@ -57,6 +60,12 @@ $error_text: #fd4b24;  // brighter red
   cursor: pointer;
   @include border-radius(21px);
   text-align: center;
+}
+
+@mixin if_narrower_than($width) {
+  @media (max-width: $width) {
+    @content;
+  }
 }
 
 /* Utilities */
@@ -191,13 +200,48 @@ header {
   }
 }
 
-div.content {
-  max-width: 610px;
+.chapter {
+  max-width: $text_max_width;
   margin: 0 auto;
+  padding: 2rem calc(50vw - #{$text_max_width / 2});
+  top: 4rem;
+  position: relative;
+  margin-top: 2rem;
+  box-sizing: content-box;
+  background-color: #fff;
+  margin-bottom: 4rem;
+}
 
-  section {
-    padding: 2em 0 0;
-    top: 2em;
+.chapter--first {
+  margin-top: 0;
+  margin-bottom: -2rem;
+  top: 0;
+  background-color: transparent;
+}
+
+.chapter-header {
+  position: relative;
+}
+
+.chapter-header-text {
+  position: relative;
+  z-index: 1;
+}
+
+.chapter-header-shape {
+  position: absolute;
+}
+
+.shape-2 {
+  top: -50px;
+  left: -30px;
+  width: 404px;
+  height: 202px;
+
+  @include if_narrower_than($shape_breakpoint) {
+    width: 202px;
+    height: 101px;
+    top: -20px;
   }
 }
 
@@ -246,6 +290,7 @@ footer {
 
 p {
   margin: 1em 0;
+  position: relative;
   &.error-message {
     visibility: hidden;
     text-align: center;
@@ -330,7 +375,6 @@ h2 {
   line-height: 1.3em;
   margin: 0 -2em;
   padding: 1.5em 0 .5em;
-  border-top: 3px solid $accent;
 }
 
 h3 {
