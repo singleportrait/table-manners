@@ -1,0 +1,63 @@
+@import "compass/utilities/general/clearfix";
+@import "mixins";
+
+.narrow_image {
+  margin: 0 auto;
+  display: block;
+}
+
+.wide_image {
+  display: block;
+  max-width: 180%;
+  height: auto;
+  margin: 2rem 40% 2rem -40%;
+
+  @include if_narrower_than(800px) {
+    max-width: 100%;
+    margin: 2rem 0;
+  }
+}
+
+.wine-glasses {
+  float: left;
+  margin-right: 1em;
+  max-width: 260px;
+  img {
+    max-width: 260px;
+    margin: -1.5em 0;
+  }
+}
+
+.glasses {
+  font-size: 17px;
+  line-height: 1.5em;
+  margin: 0 2%;
+  padding: 1em 0;
+  @include clearfix;
+  border-top: 1px solid $accent;
+  border-bottom: 1px solid $accent;
+  img {
+    float: left;
+    margin: 0 1em;
+  }
+  div {
+    float: left;
+    width: 25%;
+  }
+  @media (max-width: 1400px) {
+    div {
+      width: 50%;
+      padding: 0 2.5%;
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 1400px) {
+    img.skinny {
+      margin-left: 2em;
+    }
+    p {
+      margin-left: 160px;
+    }
+
+  }
+}
