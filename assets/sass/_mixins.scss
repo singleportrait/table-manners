@@ -25,7 +25,13 @@
 }
 
 @mixin if_narrower_than($width) {
-  @media (max-width: $width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin if_wider_than($width) {
+  @media (min-width: $width + 1) {
     @content;
   }
 }
