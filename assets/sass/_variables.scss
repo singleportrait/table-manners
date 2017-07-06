@@ -3,12 +3,13 @@ $dark_bg: #222;
 
 // pretty pink beige: #aa7966
 
-$accent: adjust-hue(saturate(lighten($dark_bg, 35%), 30%), 170deg); // bluish
 $accent: #F0BE78;
 $accent_light: #fcffde; // palest babiest beige
 $accent_text: darken($accent, 20%);
 
-$dark_text: #222;
+$secondary_accent: #DF2F33;
+
+$dark_text: #494C4D;
 
 $link: darken($accent, 30%);
 $link_hover: lighten($dark_bg, 40%);

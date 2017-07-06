@@ -22,28 +22,27 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 4em;
-  line-height: 1em;
-  padding-top: 1em;
+  font-size: 4rem;
+  line-height: 1rem;
+  padding-top: 1rem;
 }
 
 h2 {
-  font-size: 1.66em;
-  line-height: 1.3em;
-  margin: 0 -2em;
-  padding: 1.5em 0 .5em;
+  font-size: 1.66rem;
+  line-height: 1.3rem;
+  margin: 0 -2rem;
+  padding: 1.5rem 0 .5em;
 }
 
 h3 {
-  font-size: 1.33em;
-  margin: 1.5em 0 0;
+  font-size: 1.33rem;
+  margin: 1.5rem 0 0;
 }
 
 h4 {
-  color: $accent_text;
-  font-weight: 500;
-  font-size: 1.33em;
-  margin-top: 2em;
+  color: $accent;
+  font-size: 1.33rem;
+  margin-top: 2rem;
 }
 
 h5 {
@@ -78,10 +77,10 @@ strong {
 
 blockquote {
   font-family: $font_accent_family;
-  font-size: 1.35em;
-  line-height: 1.3em;
-  margin: 1em 0;
-  padding: 1em 0;
+  font-size: 1.35rem;
+  line-height: 1.3rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
   border-top: 1px solid $accent;
   border-bottom: 1px solid $accent;
 }

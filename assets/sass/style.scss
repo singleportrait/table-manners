@@ -227,36 +227,51 @@ input {
   border-bottom: 3px solid $accent;
   font-family: $font_accent_family;
   font-size: 1.2em;
+
   &[type='text'] {
     width: 10em;
+
     &.correct {
       border-bottom-color: $error;
     }
   }
+
   &[type='radio'] {
     position: absolute;
     left: -999em;
+
     + span {
+      @include border-radius(21px);
+      width:39px;
+      height:39px;
+      border: 3px solid #ccc;
+      cursor: pointer;
+      text-align: center;
       display: block;
       float: left; /* make this fake elements inline block */
       position: relative; /* we need to move the element without effecting the doc flow */
       top: 0.15em;  /* we're moving it slightly down for alignment purposes */
       left: -2px; /* we're moving it slightly to the left */
       margin: 0 .5em 0 0;
-      @include circle(39px);
       font: 500 1.25em/1.8em $font_accent_family;
       background-color: white;
+
       &:hover {
-        background-color: lighten($accent, 40%);
+        background-color: $accent;
+        border-color: $accent;
       }
     }
+
     &:checked + span {
       background-color: $accent;
+      border-color: $accent;
     }
+
     &.correct + span {
       background-color: $error;
       border-color: $error;
     }
+
     &.incorrect + span {
       background-color: #ccc;
       border-color: #ccc;
@@ -270,6 +285,7 @@ input {
   &[type="submit"] {
     @include button;
     @include transition(background-color);
+
     &:disabled {
       background-color: #ccc;
       cursor: default;
