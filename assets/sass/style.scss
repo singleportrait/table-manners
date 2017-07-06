@@ -140,14 +140,21 @@ body {
 }
 
 .shape-2 {
+  @include shape_widths_with_narrower_screens(808px, 404px);
   top: -50px;
   left: -30px;
-  width: 404px;
-  height: 202px;
 
   @include if_narrower_than($shape_breakpoint) {
-    width: 202px;
-    height: 101px;
+    top: -20px;
+  }
+}
+
+.shape-3 {
+  @include shape_widths_with_narrower_screens(976px, 368px);
+  top: -50px;
+  left: -50px;
+
+  @include if_narrower_than($shape_breakpoint) {
     top: -20px;
   }
 }

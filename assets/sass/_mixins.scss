@@ -35,3 +35,13 @@
     @content;
   }
 }
+
+@mixin shape_widths_with_narrower_screens($width, $height) {
+  width: $width / 2;
+  height: $height / 2;
+
+  @include if_narrower_than($shape_breakpoint) {
+    width: $width / 4;
+    height: $height / 4;
+  }
+}
