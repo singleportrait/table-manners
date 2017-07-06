@@ -18,13 +18,18 @@
   }
 }
 
-.wine-glasses {
+.wine_glasses {
   float: left;
   margin-right: 1em;
   max-width: 260px;
+
+  @include if_narrower_than($text_breakpoint) {
+    float: none;
+    margin: 0 auto;
+  }
+
   img {
     max-width: 260px;
-    margin: -1.5em 0;
   }
 }
 
