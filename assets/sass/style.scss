@@ -63,12 +63,6 @@ body {
   }
 }
 
-.header-top {
-  @include circle(37px);
-  @include sprites-sprite(up_arrow, $offset-x: 6px,  $offset-y: 3px);
-  @extend .hidden-text;
-}
-
 .header-logo {
   text-align: center;
   margin-top: 0;
@@ -93,7 +87,6 @@ body {
   font-size: 16px;
   line-height: 1em;
   top: 47px;
-  left: 1em;
   display: none;
   background: $dark_bg;
 

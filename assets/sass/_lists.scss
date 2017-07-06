@@ -109,3 +109,7 @@ ol {
     }
   }
 }
+
+.back_to_top:before {
+  content: "\2191\2191"; // ↑↑
+}
