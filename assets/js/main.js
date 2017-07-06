@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   /* Dropdown menu: toggle on and off, and close if you select a menu item */
-  $('.contents').on('click',function(e) {
+  $('#toggle_dropdown').on('click',function(e) {
     $('#contents').toggleClass('display');
     e.preventDefault();
   });

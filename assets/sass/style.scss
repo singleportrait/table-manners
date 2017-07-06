@@ -2,6 +2,7 @@
 @import "variables";
 @import "mixins";
 @import "typography";
+@import "lists";
 @import "images";
 
 @import "compass/utilities/general/clearfix";
@@ -48,7 +49,7 @@ body {
   line-height: 1.5;
 }
 
-header {
+.header {
   position: fixed;
   z-index: 1;
   background: $dark_bg;
@@ -60,63 +61,44 @@ header {
       color: white;
     }
   }
+}
 
-  p, a {
-    color: $accent;
-    margin: 0 1em;
-  }
+.header-top {
+  @include circle(37px);
+  @include sprites-sprite(up_arrow, $offset-x: 6px,  $offset-y: 3px);
+  @extend .hidden-text;
+}
 
-  .top {
-    @include circle(37px);
-    @include sprites-sprite(up_arrow, $offset-x: 6px,  $offset-y: 3px);
-    @extend .hidden-text;
-  }
+.header-logo {
+  text-align: center;
+  margin-top: 0;
+  color: white;
+}
 
-  .contents, p {
-    @extend .featured-text;
-    font-size: 16px;
-    line-height: 37px;
-  }
+.header-contents {
+  @extend .featured-text;
+  font-size: 16px;
+  line-height: 37px;
+  color: $accent;
+  margin: 0 1em;
+}
 
-  p {
-    float: right;
-    text-align: right;
-  }
+.header-contents--points {
+  float: right;
+  text-align: right;
+}
 
-  .points {
-    float: right;
+.header-dropdown {
+  position: absolute;
+  font-size: 16px;
+  line-height: 1em;
+  top: 47px;
+  left: 1em;
+  display: none;
+  background: $dark_bg;
+
+  a {
     color: white;
-    margin: 0;
-    div {
-      font-size: 1.75em;
-      &.total {
-        margin-top: .2em;
-      }
-    }
-  }
-
-  h3.logo {
-    text-align: center;
-    margin-top: 0;
-    color: white;
-  }
-
-  .dropdown {
-    position: absolute;
-    font-size: 16px;
-    line-height: 1em;
-    top: 57px; // 37px + 1em
-    left: 1em;
-    display: none;
-    background: $dark_bg;
-    ul {
-      padding: 1em 0;
-      border-top: 2px solid $accent;
-      margin: 0 1em;
-    }
-    a {
-      color: white;
-    }
   }
 }
 
@@ -170,13 +152,13 @@ header {
   }
 }
 
-.header {
+.splash {
   text-align: center;
   height: 80vh; /* viewport height !! */
   position: relative;
 }
 
-.header-featured_image {
+.splash-featured_image {
   width: 822px;
   height: 625px;
   margin-top: 150px;
@@ -232,119 +214,6 @@ p {
 .main {
   h1, h3, h4, h5 {
     margin: 1.5em 0 .5em;
-  }
-}
-
-/* Lists */
-
-nav {
-  @include clearfix;
-
-  @media screen and (min-width: 700px) {
-    width: 110%;
-    margin-left: -5%;
-    ol { padding-right: .5em; }
-  }
-
-
-  ol {
-    width: 50%;
-    float: left;
-    padding-left: 2em;
-    li {
-      line-height: $line-height;
-      a {
-        color: black;
-      }
-    }
-
-  }
-
-  span { color: $link_hover; }
-
-}
-
-ol, ul {
-  padding: 0em 2em 1em;
-}
-
-ol {
-  &:first-child {
-    //counter-reset: customlistcounter;
-  }
-  li {
-    line-height: $line-height*1.5;
-    list-style-type: decimal-leading-zero;
-    &.error {
-      &:before {
-        color: $error;
-      }
-
-      input[type="text"] {
-        border-bottom-color: $error;
-      }
-
-      input[type="radio"] + span {
-        border-color: $error;
-        &:hover {
-          background-color: lighten($error, 20%);
-        }
-      }
-
-    }
-
-    &.tips {
-      strong {
-        width: 1.25em;
-        display: inline-block;
-      }
-    }
-  }
-  &.min {
-    li {
-      line-height: $line-height;
-    }
-  }
-}
-
-li {
-  margin: .5em 0;
-}
-
-
-$lists:6,11,12,15,20,24,26,34,40,61,64,67;
-
-ol {
-  counter-reset:li; /* Initiate a counter */
-  margin-left:0; /* Remove the default left margin */
-  padding-left:0; /* Remove the default left padding */
-  @each $list in $lists {
-    &[start="#{$list}"] {
-      counter-reset:li -1+$list;
-    }
-  }
-  li {
-    position:relative; /* Create a positioning context */
-    margin:0 0 0 -.25em; /* Send numbers out to the left */
-    padding:4px 8px; /* Add some spacing around the content */
-    list-style:none; /* Disable the normal item numbering */
-    &:before {
-      content:counter(li) '.'; /* Use the counter as content */
-      counter-increment:li; /* Increment the counter by 1 */
-      /* Position and style the number */
-      position:absolute;
-      top:-2px;
-      left:-2em;
-      width:2em;
-      /* Some space between the number and the content in browsers that support
-         generated content but not positioning it (Camino 2 is one example) */
-      margin-right:8px;
-      padding:5px;
-      font-weight:600;
-      font-family: $font_accent_family;
-      text-align:center;
-      color: darken($accent, 6%);
-    }
   }
 }
 
@@ -457,6 +326,19 @@ input {
   }
 }
 
+.points--header {
+  float: right;
+  color: white;
+  margin: 0;
+
+  div {
+    font-size: 1.75em;
+    line-height: 1;
+    &.total {
+      margin-top: .2em;
+    }
+  }
+}
 
 /* Modal */
 
@@ -522,7 +404,7 @@ input {
     }
   }
 
-  section.header {
+  .splash {
     height: auto;
     padding-bottom: 2em;
 

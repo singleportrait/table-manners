@@ -14,30 +14,29 @@
   </head>
   <body class="minion">
 
-    <header>
+    <header class="header">
 
-      <a href="#top" class="top">Back to Top</a>
+      <a href="#top" class="header-top">Back to Top</a>
 
-      <a href="#contents" class="contents">Contents</a>
+      <a href="#contents" id="toggle_dropdown" class="header-contents">Contents</a>
 
-      <div class="points">
+      <div class="points points--header">
         <div class="earned" id="total_points">0</div>
         <div class="total">88</div>
       </div>
-      <p>Points</p>
+      <p class="header-contents header-contents--points">Points</p>
 
-      <h3 class="logo">Table Manners</h3>
+      <h3 class="header-logo">Table Manners</h3>
 
-      <div id="contents" class="dropdown">
-        <ul>
-
+      <div id="contents" class="header-dropdown">
+        <ol class="table_of_contents dropdown_list">
           <li><a href="#introduction">Introduction</a></li>
           <li><a href="#rsvp">RSVP</a></li>
-          <li><a href="#wear">What Do I Wear?</a></li>
-          <li><a href="#precedence">Precedence, or Who Goes First?</a></li>
-          <li><a href="#seated">Being Seated</a></li>
+          <li><a href="#wear">What Do I Wear?</a><span>*</span></li>
+          <li><a href="#precedence">Precedence, or Who Goes First?</a><span>*</span></li>
+          <li><a href="#seated">Being Seated</a><span>*</span></li>
           <li><a href="#do_dont">Dos and Don'ts</a></li>
-          <li><a href="#party">Party Conversation</a></li>
+          <li><a href="#party">Party Conversation</a><span>*</span></li>
           <li><a href="#setting">Setting the Table</a></li>
           <li><a href="#ordering">Ordering Dinner &amp; Wine</a></li>
           <li><a href="#toasting">Toasting</a></li>
@@ -51,15 +50,14 @@
           <li><a href="#finished">I'm Finished</a></li>
           <li><a href="#tipping">Tipping</a></li>
           <li><a href="#conclusion">Conclusion</a></li>
-
-        </ul>
+        </ol>
       </div>
 
     </header>
 
-    <section class="header">
+    <section class="splash">
 
-      <img class="header-featured_image" src="assets/images/intro.png"/>
+      <img class="splash-featured_image" src="assets/images/intro.png"/>
 
       <h2>in Twenty Minutes</h2>
 
@@ -103,8 +101,8 @@
 
       <h2>Table of Contents</h2>
 
-      <nav>
-        <ol>
+      <nav class="list_columns">
+        <ol class="table_of_contents">
           <li><a href="#introduction">Introduction</a></li>
           <li><a href="#rsvp">RSVP</a></li>
           <li><a href="#wear">What Do I Wear?</a> <span>*</span></li>
@@ -116,7 +114,7 @@
           <li><a href="#ordering">Ordering Dinner &amp; Wine</a></li>
           <li><a href="#toasting">Toasting</a></li>
       </ol>
-      <ol start="11">
+      <ol class="table_of_contents" start="11">
           <li><a href="#serving">Serving</a> <span>*</span></li>
           <li><a href="#next">What Course is Next?</a></li>
           <li><a href="#silverware">Description of Silverware</a> <span>*</span></li>
@@ -410,7 +408,7 @@
       <!-- <p><small>Click here for the <a href="test-answers.html">answers to the self-test questions</a>.</small></p> -->
 
       <form name="set_1" method="POST" action="">
-        <ol>
+        <ol class="quiz_list">
           <li><label for="question1">"R.S.V.P." is French for <em>"Repondez s'il vous plait</em>," which in English means</label> <input type="text" name="q1" id="question1">.</li>
           <li>If you get an invitation that says "white tie," the man is to wear a <input type="text" name="q2">.</li>
           <li>An invitation that says "black tie" means the man is to wear a <input type="text" name="q3">.</li>
@@ -418,7 +416,7 @@
           <li>A woman who wears a hat would traditionally also wear <input type="text" name="q5">.</li>
         </ol>
         <h5>True or False?</h5>
-        <ol start="6">
+        <ol class="quiz_list" start="6">
           <li>
             <input type="radio" name="q6" value="true"><span>T</span>
             <input type="radio" name="q6" value="false"><span>F</span>
@@ -537,7 +535,7 @@
 
       <form name="set_2" method="POST" action="">
 
-        <ol start="12">
+        <ol class="quiz_list" start="12">
           <li>A woman always goes through doors <input type="text" name="q12a"> and down stairs <input type="text" name="q12b">.</li>
           <li>When a man and a woman are walking along the street, <br> the man walks on the <input type="text" name="q13"> side.</li>
           <li>Introductions, handshakes, and guests of honor have one thing in common: the <input type="text" name="q14"> person comes first.</li>
@@ -552,7 +550,10 @@
 
     <section id="seated" class="chapter">
 
-      <h2>Being Seated</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">5. Being Seated</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>If you have cocktails before dinner, leave them there.
       Bring them to the table only if the hostess suggests it.</p>
@@ -626,7 +627,7 @@
       <h4>Self Test</h4>
 
       <form name="set_3" method="POST" action="">
-        <ol start="15">
+        <ol class="quiz_list" start="15">
           <li>The man pulls out the chair for the woman on his <input type="text" name="q15">. </li>
           <li>Put your napkin in your lap when the <input type="text" name="q16"> puts her napkin in her lap.</li>
           <li>The <input type="text" name="q17"> guests always order first. </li>
@@ -642,7 +643,10 @@
 
     <section id="do_dont" class="chapter">
 
-      <h2>Do's and Don'ts</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">6. Do's and Don'ts</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>Some other general rules: </p>
       <ul>
@@ -699,7 +703,10 @@ If something is broken, simply apologize, and make
 
     <section id="party" class="chapter">
 
-      <h2>Party Conversation</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">7. Party Conversation</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>Party conversation, should be light, non-threatening and
       definitely fun. Give the person you're speaking to your undivided attention.
@@ -724,7 +731,7 @@ If something is broken, simply apologize, and make
 
 
       <h5>When do you correct someone?</h5>
-      <ol class="min">
+      <ol class="quiz_list min">
         <li>If at all possible, when you're alone.</li>
         <li>When you will spare them further embarrassment.</li>
 
@@ -744,7 +751,7 @@ If something is broken, simply apologize, and make
       <h4>Self Test</h4>
 
       <form name="set_4" method="POST" action="">
-        <ol start="20">
+        <ol class="quiz_list" start="20">
           <li>Lay your napkin in your <input type="text" name="q20"> when you leave the table temporarily. </li>
           <li>Pass things like the salt and pepper to the <input type="text" name="q21">.</li>
           <li>When do you correct someone?
@@ -755,7 +762,7 @@ If something is broken, simply apologize, and make
         </ol>
 
         <h5>True or False?</h5>
-        <ol start="24">
+        <ol class="quiz_list" start="24">
           <li>
             <input type="radio" name="q24" value="true"><span>T</span>
             <input type="radio" name="q24" value="false"><span>F</span>
@@ -776,7 +783,10 @@ If something is broken, simply apologize, and make
 
     <section id="setting" class="chapter">
 
-      <h2>8. Setting the Table</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">8. Setting the Table</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>The individual place setting for each person is called
       the "cover" and includes silverware, china, crystal, and linen. The cover is
@@ -875,7 +885,7 @@ If something is broken, simply apologize, and make
       <h4>Self Test</h4>
 
       <form name="set_5" method="POST" action="">
-        <ol start="26">
+        <ol class="quiz_list" start="26">
           <li>A cover should allow for <input type="text" name="q26a" size="5"> to <input type="text" name="q26b"> inches to prevent feeling cramped.</li>
           <li>Place cards should be used when there are <input type="text" name="q27"> or more people.</li>
           <li>When you leave the table after dinner, place your napkin loosely to the <input type="text" name="q28"> of your plate.</li>
@@ -893,7 +903,10 @@ If something is broken, simply apologize, and make
 
     <section id="ordering" class="chapter">
 
-      <h2>Ordering Dinner and Wine</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">9. Ordering Dinner and Wine</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>At a restaurant, the female guest of honor orders first,
       unless she wishes for her escort to order for her. </p>
@@ -982,7 +995,10 @@ If something is broken, simply apologize, and make
 
     <section id="toasting" class="chapter">
 
-      <h2>Toasting</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">10. Toasting</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>Toasts are very special and need to be kept to a minimum
       to keep their significance. </p>
@@ -1003,7 +1019,10 @@ If something is broken, simply apologize, and make
 
     <section id="serving" class="chapter">
 
-      <h2>Serving</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">11. Serving</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>The female guest of honor is served first. All food is
       served from the left, and all beverages from the right. When being served at
@@ -1052,7 +1071,7 @@ If something is broken, simply apologize, and make
       <h4>Self Test</h4>
 
       <form name="set_6" method="POST" action="">
-        <ol start="34">
+        <ol class="quiz_list" start="34">
           <li>What two types of glasses need to be held by their stem?
             <br><input type="text" name="q34a"> and <input type="text" name="q34b">.
           </li>
@@ -1073,7 +1092,10 @@ If something is broken, simply apologize, and make
 
     <section id="next" class="chapter">
 
-      <h2>What Course is Next?</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">12. What Course is Next?</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>Over the years, the order in which food is served has
       changed. Since the silverware is set to follow that order, you have to see
@@ -1117,7 +1139,10 @@ If something is broken, simply apologize, and make
 
     <section id="silverware" class="chapter">
 
-      <h2>Description of Silverware</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">13. Description of Silverware</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <!-- <img src="assets/images/orig/TableManners4.gif"> -->
       <img src="assets/images/table-labels2.png" class="basic-setup">
@@ -1234,7 +1259,7 @@ If something is broken, simply apologize, and make
       <h4>Self Test</h4>
 
       <form name="set_7" method="POST" action="">
-        <ol start="40">
+        <ol class="quiz_list" start="40">
           <li>A sorbet after the salad is served to cleanse your <input type="text" name="q40"> before the main course. </li>
           <li>The seafood fork will have only <input type="text" name="q41"> tines. </li>
           <li>The dessert fork, if already on the table, will be above the <input type="text" name="q42">.</li>
@@ -1276,7 +1301,10 @@ If something is broken, simply apologize, and make
 
     <section id="fingers" class="chapter">
 
-      <h2>Fork, Spoon, Knife or Fingers?</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">14. Fork, Spoon, Knife or Fingers?</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p><em>When in doubt, use your fork.</em> It's preferred over
       fingers, spoons, and yes, even knives! If you can eat or cut something with
@@ -1354,7 +1382,7 @@ If something is broken, simply apologize, and make
       <h4>Self Test</h4>
 
       <form name="set_8" method="POST" action="">
-        <ol start="61">
+        <ol class="quiz_list" start="61">
           <li>When in doubt, use your <input type="text" name="q61">.</li>
           <li>Spaghetti is eaten with a <input type="text" name="q62"> only.</li>
           <li><input type="text" name="q63"> are not used on vegetables.</li>
@@ -1368,7 +1396,10 @@ If something is broken, simply apologize, and make
 
     <section id="appropriate" class="chapter">
 
-      <h2>Is it Appropriate to . . .</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">15. Is it Appropriate to . . .</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <h3>Tip Your Soup Bowl</h3>
 
@@ -1443,7 +1474,7 @@ If something is broken, simply apologize, and make
       <h5>True or False?</h5>
 
       <form name="set_9" method="POST" action="">
-        <ol start="64">
+        <ol class="quiz_list" start="64">
           <li>
             <input type="radio" name="q64" value="true"><span>T</span>
             <input type="radio" name="q64" value="false"><span>F</span>
@@ -1470,7 +1501,10 @@ If something is broken, simply apologize, and make
 
     <section id="formal" class="chapter">
 
-      <h2>A Traditionally Formal Meal</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">16. A Traditionally Formal Meal</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>At a traditionally formal meal, there is no butter plate,
       or dessert soon and fork. Bread traditionally was not served with formal
@@ -1494,7 +1528,7 @@ If something is broken, simply apologize, and make
 
       <h3>A Seven Course Meal</h3>
 
-      <ol class="min">
+      <ol class="quiz_list min">
         <li>Soup, fruit cup, shrimp, oysters</li>
         <li>Fish</li>
         <li>Meat, roast or fowl and a vegetable</li>
@@ -1506,7 +1540,7 @@ If something is broken, simply apologize, and make
 
       <h3>A Nine Course Meal</h3>
 
-      <ol class="min">
+      <ol class="quiz_list min">
         <li>Caviar, clams, fruits, shrimp, or oysters </li>
         <li>Soup</li>
         <li>Fish</li>
@@ -1520,7 +1554,7 @@ If something is broken, simply apologize, and make
 
       <h3>A Ten Course Meal, Yikes!</h3>
 
-      <ol class="min">
+      <ol class="quiz_list min">
         <li>Caviar</li>
         <li>Fruits</li>
         <li>Oysters or clams </li>
@@ -1556,7 +1590,10 @@ If something is broken, simply apologize, and make
 
     <section id="finished" class="chapter">
 
-      <h2>I'm Finished</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">17. I'm Finished</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>You've finished eating. Now what do you do with the
       silverware that you were so worried about? You place it on your plate in one
@@ -1600,7 +1637,10 @@ If something is broken, simply apologize, and make
 
     <section id="tipping" class="chapter">
 
-      <h2>Tipping</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">18. Tipping</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>People simply don't agree on this subject. The name
       originally came from an abbreviation. Each letter in the word "tips" stood
@@ -1658,7 +1698,7 @@ If something is broken, simply apologize, and make
       <h4>Self Test</h4>
 
       <form name="set_10" method="POST" action="">
-        <ol start="67">
+        <ol class="quiz_list" start="67">
           <li class="tips">The letters in the word "tips" stand for four words:
             <br><strong class="special">T</strong><input type="text" name="q67a">
             <br><strong class="special">I</strong><input type="text" name="q67b">
@@ -1685,7 +1725,10 @@ If something is broken, simply apologize, and make
 
     <section id="conclusion" class="chapter">
 
-      <h2>Congratulations!</h2>
+      <h2 class="chapter-header">
+        <div class="chapter-header-text">19. Congratulations!</div>
+        <img class="chapter-header-shape shape-2" src="assets/images/accent_shapes/chapter2@4x.png"/>
+      </h2>
 
       <p>You've made it through (likely) much more than 20 minutes of old-fashioned dining etiquette. Now you can dine in style!</p>
 
