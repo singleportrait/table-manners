@@ -154,7 +154,7 @@ body {
 
 .splash {
   text-align: center;
-  height: 80vh; /* viewport height !! */
+  min-height: 80vh;
   position: relative;
 }
 
