@@ -18,7 +18,7 @@ $(document).ready(function() {
 
   /* Close modal window when clicking on outside of it */
   $(".modal").on('click', function(e) {
-    if(e.target == this || e.target == $('.close')[0]){ 
+    if(e.target == this || e.target == $('.close')[0]){
       // only if the target itself has been clicked
       location.hash = 'close';
     }
@@ -39,33 +39,33 @@ $(document).ready(function() {
   /* Set up validation for all forms */
   // Having to do this all literally sucks, but I have to refactor later
   var validator = new FormValidator('set_1', [
-    {name:'q1',rules:'required'}, 
-    {name:'q2',rules:'required'}, 
-    {name:'q3',rules:'required'}, 
-    {name:'q4a',rules:'required'}, 
-    {name:'q4b',rules:'required'}, 
-    {name:'q5',rules:'required'}, 
-    {name:'q6',rules:'required'}, 
-    {name:'q7',rules:'required'}, 
-    {name:'q8',rules:'required'}, 
-    {name: 'q9',rules: 'required'}, 
+    {name:'q1',rules:'required'},
+    {name:'q2',rules:'required'},
+    {name:'q3',rules:'required'},
+    {name:'q4a',rules:'required'},
+    {name:'q4b',rules:'required'},
+    {name:'q5',rules:'required'},
+    {name:'q6',rules:'required'},
+    {name:'q7',rules:'required'},
+    {name:'q8',rules:'required'},
+    {name: 'q9',rules: 'required'},
     {name: 'q10',rules: 'required'},
     {name: 'q11',rules: 'required'}
   ], function(errors, event) {
     check_required(errors, event, this.form);
   });
   var validator = new FormValidator('set_2', [
-    {name:'q12a',rules:'required'}, 
-    {name:'q12b',rules:'required'}, 
-    {name:'q13',rules:'required'}, 
+    {name:'q12a',rules:'required'},
+    {name:'q12b',rules:'required'},
+    {name:'q13',rules:'required'},
     {name:'q14',rules:'required'}
   ], function(errors, event) {
     check_required(errors, event, this.form);
   });
   var validator = new FormValidator('set_3', [
-    {name:'q15',rules:'required'}, 
-    {name:'q16',rules:'required'}, 
-    {name:'q17',rules:'required'}, 
+    {name:'q15',rules:'required'},
+    {name:'q16',rules:'required'},
+    {name:'q17',rules:'required'},
     {name:'q18a',rules:'required'},
     {name:'q18b',rules:'required'},
     {name:'q19a',rules:'required'},
@@ -74,9 +74,9 @@ $(document).ready(function() {
     check_required(errors, event, this.form);
   });
   var validator = new FormValidator('set_4', [
-    {name:'q20',rules:'required'}, 
-    {name:'q21',rules:'required'}, 
-    {name:'q22a',rules:'required'}, 
+    {name:'q20',rules:'required'},
+    {name:'q21',rules:'required'},
+    {name:'q22a',rules:'required'},
     {name:'q22b',rules:'required'},
     {name:'q23',rules:'required'},
     {name:'q24',rules:'required'},
@@ -85,9 +85,9 @@ $(document).ready(function() {
     check_required(errors, event, this.form);
   });
   var validator = new FormValidator('set_5', [
-    {name:'q26a',rules:'required'}, 
-    {name:'q26b',rules:'required'}, 
-    {name:'q27',rules:'required'}, 
+    {name:'q26a',rules:'required'},
+    {name:'q26b',rules:'required'},
+    {name:'q27',rules:'required'},
     {name:'q28',rules:'required'},
     {name:'q29',rules:'required'},
     {name:'q30',rules:'required'},
@@ -100,9 +100,9 @@ $(document).ready(function() {
     check_required(errors, event, this.form);
   });
   var validator = new FormValidator('set_6', [
-    {name:'q34a',rules:'required'}, 
-    {name:'q34b',rules:'required'}, 
-    {name:'q35',rules:'required'}, 
+    {name:'q34a',rules:'required'},
+    {name:'q34b',rules:'required'},
+    {name:'q35',rules:'required'},
     {name:'q36a',rules:'required'},
     {name:'q36b',rules:'required'},
     {name:'q37a',rules:'required'},
@@ -114,9 +114,9 @@ $(document).ready(function() {
     check_required(errors, event, this.form);
   });
   var validator = new FormValidator('set_7', [
-    {name:'q40',rules:'required'}, 
-    {name:'q41',rules:'required'}, 
-    {name:'q42',rules:'required'}, 
+    {name:'q40',rules:'required'},
+    {name:'q41',rules:'required'},
+    {name:'q42',rules:'required'},
     {name:'q43',rules:'required'},
     {name:'q44',rules:'required'},
     {name:'q45',rules:'required'},
@@ -124,9 +124,9 @@ $(document).ready(function() {
     {name:'q47',rules:'required'},
     {name:'q48',rules:'required'},
     {name:'q49',rules:'required'},
-    {name:'q50',rules:'required'}, 
-    {name:'q51',rules:'required'}, 
-    {name:'q52',rules:'required'}, 
+    {name:'q50',rules:'required'},
+    {name:'q51',rules:'required'},
+    {name:'q52',rules:'required'},
     {name:'q53',rules:'required'},
     {name:'q54',rules:'required'},
     {name:'q55',rules:'required'},
@@ -139,8 +139,8 @@ $(document).ready(function() {
     check_required(errors, event, this.form);
   });
   var validator = new FormValidator('set_8', [
-    {name:'q61',rules:'required'}, 
-    {name:'q62',rules:'required'}, 
+    {name:'q61',rules:'required'},
+    {name:'q62',rules:'required'},
     {name:'q63',rules:'required'}
   ], function(errors, event) {
     check_required(errors, event, this.form);
@@ -189,7 +189,7 @@ $(document).ready(function() {
       Quiz.submit_section(form);
 
       location.hash = 'success';
-      
+
     }
 
   }
@@ -204,7 +204,7 @@ var Quiz = {
 
   // Save points scored
   answers: {},
-  
+
   // Save points & grade per section
   sections: {},
 
@@ -331,7 +331,7 @@ var Quiz = {
     "q9"   : "true",
     "q10"  : "false",
     "q11"  : "true",
-    "q12a" : "first", 
+    "q12a" : "first",
     "q12b" : "last",
     "q13"  : "street",
     "q14"  : "senior",
@@ -340,7 +340,7 @@ var Quiz = {
     "q17"  : "female",
     "q18a" : "right",
     "q18b" : "host",
-    "q19a" : "guest of honor", 
+    "q19a" : "guest of honor",
     "q19b" : "left",
     "q20"  : "chair",
     "q21"  : "right",
@@ -403,7 +403,7 @@ var Quiz = {
     "q67d" : "service",
     "q68a" : "15",
     "q68b" : "20",
-    "q69a" : "$4.35", 
+    "q69a" : "$4.35",
     "q69b" : "5.80",
     "q70a" : "$5.25",
     "q70b" : "$7.00",
