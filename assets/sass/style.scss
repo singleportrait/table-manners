@@ -191,7 +191,7 @@ p {
   &.error-message {
     visibility: hidden;
     text-align: center;
-    color: $error_text;
+    color: $error;
 
     &.visible {
       visibility: visible;

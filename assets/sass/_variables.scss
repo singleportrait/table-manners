@@ -14,8 +14,7 @@ $dark_text: #494C4D;
 $link: darken($accent, 30%);
 $link_hover: lighten($dark_bg, 40%);
 
-$error: #f26c4f; // red
-$error_text: #fd4b24;  // brighter red
+$error: $secondary_accent;
 
 $shape_breakpoint: 550px;
 
