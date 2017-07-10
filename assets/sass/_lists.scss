@@ -78,6 +78,25 @@ li {
   &.min li {
     line-height: $line-height;
   }
+
+  @include if_narrower_than($text_breakpoint) {
+    margin-left: 2em;
+    padding: 0 0 1em;
+    li {
+      line-height: $line-height;
+    }
+    span + label {
+      display: block;
+      clear: both;
+      padding-bottom: .75em;
+    }
+    input[type='radio'] + span {
+      top: -.25em;
+    }
+    img {
+      margin-left: -1.5em;
+    }
+  }
 }
 
 $lists:6,11,12,15,20,24,26,34,40,61,64,67;
@@ -112,25 +131,6 @@ ol {
       font-family: $font_accent_family;
       text-align: center;
       color: darken($accent, 6%);
-    }
-  }
-
-  @include if_narrower_than($text_breakpoint) {
-    margin-left: 2em;
-    padding: 0 0 1em;
-    li {
-      line-height: $line-height;
-    }
-    span + label {
-      display: block;
-      clear: both;
-      padding-bottom: .75em;
-    }
-    input[type='radio'] + span {
-      top: -.25em;
-    }
-    img {
-      margin-left: -1.5em;
     }
   }
 }

@@ -49,35 +49,18 @@ body {
   line-height: 1.5;
 }
 
+$header_height: 44px;
+
 .header {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   background: $dark_bg;
   width: 100%;
-  padding: .5em 0;
+  height: 44px;
   > a {
     float: left;
     &:hover {
       color: white;
-    }
-  }
-
-  @include if_narrower_than($text_breakpoint) {
-    h3 {
-      display: none;
-    }
-    p {
-      margin-right: -.4em;
-    }
-    a {
-      margin: 0 .35em;
-    }
-    .points {
-      font-size: .8em;
-      line-height: 37px;
-    }
-    .dropdown {
-      top: 55px;
     }
   }
 }
@@ -86,12 +69,17 @@ body {
   text-align: center;
   margin-top: 0;
   color: white;
+  line-height: $header_height;
+
+  @include if_narrower_than(550px) {
+    display: none;
+  }
 }
 
 .header-contents {
   @extend .featured-text;
   font-size: 16px;
-  line-height: 37px;
+  line-height: $header_height;
   color: $accent;
   margin: 0 1em;
 }
@@ -99,13 +87,17 @@ body {
 .header-contents--points {
   float: right;
   text-align: right;
+
+  @include if_narrower_than($text_breakpoint) {
+    margin-right: -.4rem;
+  }
 }
 
 .header-dropdown {
   position: absolute;
   font-size: 16px;
   line-height: 1em;
-  top: 47px;
+  top: $header_height;
   display: none;
   background: $dark_bg;
 
@@ -441,14 +433,19 @@ input {
 .points--header {
   float: right;
   color: white;
-  margin: 0;
 
   div {
     font-size: 1.75em;
-    line-height: 1;
+    line-height: 0.9;
+
     &.total {
       margin-top: .2em;
     }
+  }
+
+  @include if_narrower_than($text_breakpoint) {
+    font-size: .8em;
+    padding-top: 0.3rem;
   }
 }
 
