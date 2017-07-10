@@ -61,6 +61,25 @@ body {
       color: white;
     }
   }
+
+  @include if_narrower_than($text_breakpoint) {
+    h3 {
+      display: none;
+    }
+    p {
+      margin-right: -.4em;
+    }
+    a {
+      margin: 0 .35em;
+    }
+    .points {
+      font-size: .8em;
+      line-height: 37px;
+    }
+    .dropdown {
+      top: 55px;
+    }
+  }
 }
 
 .header-logo {
@@ -479,22 +498,6 @@ input {
 @media screen and (max-width: $text_breakpoint) {
 
   header {
-    h3 {
-      display: none;
-    }
-    p {
-      margin-right: -.4em;
-    }
-    a {
-      margin: 0 .35em;
-    }
-    .points {
-      font-size: .8em;
-      line-height: 37px;
-    }
-    .dropdown {
-      top: 55px;
-    }
   }
 
   .splash {
@@ -524,31 +527,6 @@ input {
     line-height: 1.4em;
     div:nth-child(3) {
       clear: both;
-    }
-  }
-
-  nav ol {
-    width: 95%;
-    padding-bottom: 0;
-    margin-left: 1em;
-  }
-
-  ol {
-    margin-left: 2em;
-    padding: 0 0 1em;
-    li {
-      line-height: $line-height;
-    }
-    span + label {
-      display: block;
-      clear: both;
-      padding-bottom: .75em;
-    }
-    input[type='radio'] + span {
-      top: -.25em;
-    }
-    img {
-      margin-left: -1.5em;
     }
   }
 

@@ -33,6 +33,12 @@ li {
         color: black;
       }
     }
+
+    @include if_narrower_than($text_breakpoint) {
+      width: 95%;
+      padding-bottom: 0;
+      margin-left: 1em;
+    }
   }
 }
 
@@ -106,6 +112,25 @@ ol {
       font-family: $font_accent_family;
       text-align: center;
       color: darken($accent, 6%);
+    }
+  }
+
+  @include if_narrower_than($text_breakpoint) {
+    margin-left: 2em;
+    padding: 0 0 1em;
+    li {
+      line-height: $line-height;
+    }
+    span + label {
+      display: block;
+      clear: both;
+      padding-bottom: .75em;
+    }
+    input[type='radio'] + span {
+      top: -.25em;
+    }
+    img {
+      margin-left: -1.5em;
     }
   }
 }
