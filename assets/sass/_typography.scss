@@ -32,10 +32,16 @@ h2 {
   line-height: 1.3rem;
   margin: 0 -2rem;
   padding: 1.5rem 0 .5em;
+
+  @include if_narrower_than($text_breakpoint) {
+    font-size: 1.5em;
+    margin: 0 .5em;
+    line-height: 1.4em;
+  }
 }
 
 h3 {
-  font-size: 1.33rem;
+  font-size: 1.25rem;
   margin: 1.5rem 0 0;
 }
 
