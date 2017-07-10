@@ -2,6 +2,8 @@
 
 var debug = false;
 
+var text_breakpoint = 650;
+
 function log() {
   if (debug) {
     console.log.apply(console, arguments);
@@ -9,6 +11,25 @@ function log() {
 }
 
 $(document).ready(function() {
+
+  /* Scroll images on 'scrollable' containers to the middle horizontally
+   * if the screen is narrow enough */
+  window_width = $(window).width();
+
+  if (window_width < text_breakpoint) {
+    var $scrollable_images = $(".scrollable_wide_image");
+
+    $scrollable_images.each(function() {
+      var $image_container = $(this);
+      var updated_scroll_position = (($image_container.find("img").width() - window_width) / 2);
+
+      if ($image_container.hasClass("scrollable_wide_image--not_centered")) {
+        updated_scroll_position -= 40; // account for plates not being in the 'center'
+      }
+
+      $image_container.scrollLeft(updated_scroll_position);
+    });
+  }
 
   /* Select radio buttons with <span> elements */
   $('form span').click(function(e) {

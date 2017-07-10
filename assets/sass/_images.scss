@@ -1,20 +1,58 @@
 @import "compass/utilities/general/clearfix";
 @import "mixins";
+@import "variables";
 
-.narrow_image {
-  margin: 0 auto;
-  display: block;
+$scrollable_bg_color: #f9f9f9;
+
+.scrollable_wide_image {
+  width: 900px;
+  margin: 0 #{($text_max_width - 900px) / 2};
+
+  img {
+    max-width: 100%;
+  }
+
+  @include if_narrower_than(940px) {
+    max-width: 800px;
+    margin: 0 -#{(800px - $text_max_width) / 2};
+  }
+
+  @include if_narrower_than(850px) {
+    max-width: 700px;
+    margin: 0 -#{(700px - $text_max_width) / 2};
+  }
+
+  @include if_narrower_than($text_breakpoint) {
+    overflow-x: scroll;
+    background: $scrollable_bg_color;
+    width: 100vw;
+    //margin: 0 calc((#{$text_max_width} - 100vw) / 2); // used for wider than 650px / text breakpoint
+    margin: 0 -1rem;
+    padding: 1rem 2rem 1rem 0;
+
+    img {
+      max-width: 700px;
+    }
+  }
 }
 
-.wide_image {
-  display: block;
-  max-width: 180%;
-  height: auto;
-  margin: 2rem 40% 2rem -40%;
+.scrollable_wide_image--extra_wide {
+  @include if_wider_than(1130px) {
+    width: 1200px;
+    margin: 0 #{-($text_max_width / 2)};
+  }
+}
 
-  @include if_narrower_than(800px) {
-    max-width: 100%;
-    margin: 2rem 0;
+.scrollable_image_helper_text {
+  padding: .5rem 0;
+  background-color: $scrollable_bg_color;
+  margin: 0 -1rem;
+  text-align: center;
+  border-top: 1px solid $accent;
+  font-size: .7rem;
+
+  @include if_wider_than($text_breakpoint) {
+    display: none;
   }
 }
 
