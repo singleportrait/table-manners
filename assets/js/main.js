@@ -45,15 +45,23 @@ $(document).ready(function() {
     }
   });
 
-  /* Dropdown menu: toggle on and off, and close if you select a menu item */
+  /* Dropdown menu: toggle on and off, close if you select a menu item, close if you click elsewhere on page */
   $('#toggle_dropdown').on('click',function(e) {
     $('#contents').toggleClass('display');
     e.preventDefault();
   });
 
   $('#contents').on('click', function(e) {
-    if(e.target && e.target.nodeName == "A") {
+    if(e.target && e.target.nodeName == 'A') {
       $('#contents').toggleClass('display');
+    }
+  });
+
+  $(document).on('click', function() {
+    var $target = $(event.target);
+    var $contents = $('#contents');
+    if (!$target.closest('#contents').length && !$target.closest('#toggle_dropdown').length && $contents.hasClass('display')) {
+      $contents.removeClass('display');
     }
   });
 
