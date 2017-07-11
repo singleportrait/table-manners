@@ -17,13 +17,13 @@ $(document).ready(function() {
   window_width = $(window).width();
 
   if (window_width < text_breakpoint) {
-    var $scrollable_images = $(".scrollable_wide_image");
+    var $scrollable_images = $('.scrollable_wide_image');
 
     $scrollable_images.each(function() {
       var $image_container = $(this);
-      var updated_scroll_position = (($image_container.find("img").width() - window_width) / 2);
+      var updated_scroll_position = (($image_container.find('img').width() - window_width) / 2);
 
-      if ($image_container.hasClass("scrollable_wide_image--not_centered")) {
+      if ($image_container.hasClass('scrollable_wide_image--not_centered')) {
         updated_scroll_position -= 40; // account for plates not being in the 'center'
       }
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
   });
 
   /* Close modal window when clicking on outside of it */
-  $(".modal").on('click', function(e) {
+  $('.modal').on('click', function(e) {
     if(e.target == this || e.target == $('.close')[0]){
       // only if the target itself has been clicked
       location.hash = 'close';
@@ -300,8 +300,8 @@ var Quiz = {
 
         var answer      = this.correct_answers[field_name];
 
-        log("field: ", fields[i]);
-        log("correct answer: ", answer);
+        log('field: ', fields[i]);
+        log('correct answer: ', answer);
 
         if (field_value == answer) {
 
