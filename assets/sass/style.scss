@@ -81,7 +81,7 @@ $header_height: 44px;
   font-size: 16px;
   line-height: $header_height;
   color: $accent;
-  margin: 0 1em;
+  padding: 0 1rem;
 }
 
 .header-contents--points {
@@ -493,9 +493,6 @@ input {
 }
 
 @media screen and (max-width: $text_breakpoint) {
-
-  header {
-  }
 
   .splash {
     height: auto;
