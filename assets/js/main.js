@@ -268,13 +268,13 @@ var Quiz = {
     var grade = this.sections[form_set].grade;
 
     if (grade <= .25) {
-      success_message = "Oh! Maybe you'd rather have a food fight? That's okay, too!";
+      success_message = "Not very proper, my friend.";
     } else if (grade <= .50) {
       success_message = "Well, who can keep all those forks straight, anyway?";
     } else if (grade <= .75) {
-      success_message = "Lookin' good, fine diner!";
+      success_message = "You're almost ready for dinner!";
     } else {
-      success_message = "A toast in your honor, special guest!";
+      success_message = "A toast in your honor, special guest.";
     }
 
     $('#success_message').html(success_message);
