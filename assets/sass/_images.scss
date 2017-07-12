@@ -31,7 +31,7 @@ $scrollable_bg_color: #f9f9f9;
     padding: 1rem 2rem 1rem 0;
 
     img {
-      max-width: 700px;
+      max-width: 600px;
     }
   }
 }
@@ -41,6 +41,12 @@ $scrollable_bg_color: #f9f9f9;
     width: 1200px;
     margin: 0 #{-($text_max_width / 2)};
   }
+
+  @include if_narrower_than($text_breakpoint) {
+    img {
+      max-width: 700px;
+    }
+  }
 }
 
 .scrollable_image_helper_text {
@@ -49,7 +55,8 @@ $scrollable_bg_color: #f9f9f9;
   margin: 0 -1rem;
   text-align: center;
   border-top: 1px solid $accent;
-  font-size: .7rem;
+  color: $accent_text;
+  font-size: .75rem;
 
   @include if_wider_than($text_breakpoint) {
     display: none;
