@@ -125,6 +125,16 @@ $header_height: 44px;
   position: relative;
   z-index: 0;
   margin-bottom: 40px;
+
+  @include if_wider_than(850px) {
+    width: 75vw;
+    height: 75vw;
+  }
+
+  @include if_wider_than(950px) {
+    width: 800px;
+    height: 800px;
+  }
 }
 
 .splash-text { // ratio: 0.7378129117
@@ -132,57 +142,57 @@ $header_height: 44px;
   top: 0;
   left: 0;
   z-index: 2;
-  width: 85vw;
-  height: 62.7140974945vw;
+  width: 94.35%;
+  height: 69.612648218895%;
 }
 
 .splash-blob1 { // ratio: 1.197166512
   position: absolute;
-  top: 2vw;
+  top: 2.222222222222222%;
   right: 0;
   z-index: 1;
-  width: 36vw;
-  height: 43.097994432vw;
+  width: 39.96%;
+  height: 47.83877381952%;
 }
 
 .splash-blob2 { // ratio: 0.6703718674
   position: absolute;
-  bottom: 32vw;
-  left: 4vw;
+  bottom: 35.5555555555556%;
+  left: 4.444444444444444%;
   z-index: 1;
-  width: 12vw;
-  height: 8.0444624088vw;
+  width: 13.32%;
+  height: 8.929353273768%;
 }
 
 .splash-blob3 { // ratio: 0.3636342447
   position: absolute;
-  bottom: 22vw;
-  right: 10vw;
+  bottom: 24.444444444444444%;
+  right: 11.111111111111111%;
   z-index: 1;
-  width: 55vw;
-  height: 19.9998834585vw;
+  width: 61.05%;
+  height: 22.199870638935%;
 }
 
 .splash-silverware { // ratio: 1.1751334709
   position: absolute;
   bottom: 0;
-  left: 7vw;
+  left: 7.777777777777778%;
   z-index: 2;
-  width: 37vw;
-  height: 43.4799384233vw;
+  width: 41.07%;
+  height: 48.262731649863%;
 }
 
 .splash-subhead {
   position: absolute;
-  bottom: 12vw;
-  right: 14vw;
+  bottom: 13%;
+  right: 15.5%;
   font-size: 2.5rem;
   color: #111;
   margin: 0;
   line-height: 1;
 
   @include if_narrower_than(850px) {
-    right: 10vw;
+    right: 11%;
   }
 
   @include if_narrower_than(750px) {
@@ -195,8 +205,8 @@ $header_height: 44px;
 
   @include if_narrower_than(480px) {
     font-size: 1.40rem;
-    bottom: 8vw;
-    right: 6vw;
+    bottom: 9%;
+    right: 6.6%;
   }
 }
 
