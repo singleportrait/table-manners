@@ -92,13 +92,14 @@ p {
 a {
   text-decoration: none;
   color: $link;
+
+  &.button {
+    display: inline-block;
+  }
+
   &:hover {
     text-decoration: underline;
     color: $link_hover;
-  }
-  &.button {
-    @include button;
-    display: inline-block;
   }
 }
 

@@ -30,13 +30,6 @@ hr {
   border-bottom: 0;
 }
 
-/* Sprite */
-$sprites-spacing: 20px;
-//$sprites-sprite-dimensions: true;
-$sprites: sprite-map("sprites/*.png", $spacing: 20px); /* sdknf */
-
-@import "sprites/*.png";
-
 * {
   box-sizing: border-box;
 }
@@ -336,24 +329,52 @@ input {
   }
 
   &[type="submit"] {
-    @include button;
     @include transition(background-color);
 
     &:disabled {
       background-color: #ccc;
       cursor: default;
-      //color: #eee;
     }
   }
 }
 
+.button {
+  margin: 0 auto;
+  display: block;
+  float: none;
+  background: $accent;
+  padding: 7px 12px 4px;
+  border-bottom: 0;
+  cursor: pointer;
+  font-family: $font_accent_family;
+  color: #000;
+  font-size: 1.1rem;
+  &:hover {
+    text-decoration: none;
+    background: darken($accent, 1%);
+  }
+}
 
 /* Quiz Stuff */
 
 .points {
   margin: .5em 0;
-  @include sprites-sprite(divider, $offset-x: 41%, $offset-y: -2px);
+  position: relative;
   @include clearfix;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 0px;
+    border-color: $accent;
+    border-style: solid;
+    border-width: 0 3px 0 0;
+    transform: rotate(17deg);
+    left: 48%;
+  }
+
   div {
     font-family: $font_accent_family;
     font-size: 3em;
@@ -369,9 +390,13 @@ input {
     }
   }
   &.feature {
-    @include sprites-sprite(divider, $offset-x: 39%, $offset-y: -2px);
     margin: 2em 0;
     position: relative;
+
+    &:after {
+      left: 40%;
+    }
+
     div {
       line-height: 1em;
       width: 37%;
