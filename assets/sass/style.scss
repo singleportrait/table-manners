@@ -18,9 +18,19 @@
 .column {
   width: 50%;
   float: left;
-  &.omega {
-    margin-left: 5%;
-    width: 45%;
+
+  @include if_narrower_than($text_breakpoint) {
+    width: 100%;
+  }
+}
+
+.column--omega {
+  margin-left: 5%;
+  width: 45%;
+
+  @include if_narrower_than($text_breakpoint) {
+    margin: 0;
+    width: 100%;
   }
 }
 
@@ -32,6 +42,7 @@ hr {
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
@@ -210,7 +221,7 @@ $header_height: 44px;
 
 .chapter--first {
   margin-top: 0;
-  margin-bottom: -2rem;
+  margin-bottom: -4rem;
   top: 0;
   background-color: transparent;
 }
@@ -251,18 +262,17 @@ $header_height: 44px;
 .footer {
   background-color: $dark_bg;
   max-width: $text_max_width;
-  padding: 2em calc(50vw - #{$text_max_width / 2});
-  margin-top: 4em;
+  padding: 2rem calc(50vw - #{$text_max_width / 2});
+  margin-top: 4rem;
   box-sizing: content-box;
   @include clearfix;
-  div {
-    @extend .column;
-  }
+
   a {
     color: white;
   }
-  h5 {
-    text-transform: uppercase;
+
+  @include if_narrower_than($text_breakpoint) {
+    padding: 2rem 1rem;
   }
 }
 
@@ -512,10 +522,6 @@ input {
     div:nth-child(3) {
       clear: both;
     }
-  }
-
-  .column {
-    width: 100%;
   }
 
   .modal {

@@ -1,17 +1,15 @@
 @import "variables";
 @import "compass/utilities/general/clearfix";
 
+$list_line_height: 2rem;
+$quiz_line_height: 2.7rem;
+
 ol, ul {
   padding: 0em 2em 1em;
 }
 
 li {
   margin: .5em 0;
-}
-
-.dropdown_list {
-  padding-left: 2.5rem;
-  padding-top: 1rem;
 }
 
 .list_columns {
@@ -27,8 +25,10 @@ li {
     width: 50%;
     float: left;
     padding-left: 2rem;
+
     li {
-      line-height: 2rem;
+      line-height: $list_line_height;
+
       a {
         color: black;
       }
@@ -37,7 +37,6 @@ li {
     @include if_narrower_than($text_breakpoint) {
       width: 95%;
       padding-bottom: 0;
-      margin-left: 1em;
     }
   }
 }
@@ -49,7 +48,8 @@ li {
 
   a {
     display: block;
-    padding: .25rem .5rem;
+    padding: 0 .5rem;
+    line-height: $list_line_height;
   }
 
   span {
@@ -66,7 +66,8 @@ li {
 
 .quiz_list {
   li {
-    line-height: $line-height*1.5;
+    line-height: $quiz_line_height;
+
     &.error {
       input[type="text"] {
         border-bottom-color: $error;
@@ -90,17 +91,18 @@ li {
         display: inline-block;
       }
     }
-  }
-  &.min li {
-    line-height: $line-height;
+
+    &:before {
+      line-height: $quiz_line_height + .1rem;
+    }
   }
 
   @include if_narrower_than($text_breakpoint) {
     margin-left: 2em;
     padding: 0 0 1em;
-    font-size: .75rem;
+    font-size: .85rem;
 
-    li {
+    li, li:before {
       line-height: 1.5rem;
     }
 
@@ -141,21 +143,31 @@ ol {
       counter-increment: li; /* Increment the counter by 1 */
       /* Position and style the number */
       position: absolute;
-      top: 0;
       left: -2em;
       width: 2em;
       /* Some space between the number and the content in browsers that support
          generated content but not positioning it (Camino 2 is one example) */
       margin-right: 8px;
-      padding: 5px;
+      padding: 0 .3rem;
       font-weight: 600;
       font-family: $font_accent_family;
       text-align: center;
       color: darken($accent, 6%);
+      line-height: $list_line_height;
     }
   }
 }
 
 .back_to_top:before {
   content: "\2191\2191"; // ↑↑
+}
+
+.dropdown_list {
+  padding-left: 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0;
+
+  a, li:before {
+    line-height: 1.5rem;
+  }
 }
