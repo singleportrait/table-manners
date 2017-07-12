@@ -365,7 +365,7 @@ input {
   }
 }
 
-/* Quiz Stuff */
+/* Points: Header, Modal, Conclusion */
 
 .points {
   margin: .5em 0;
@@ -383,50 +383,57 @@ input {
     border-width: 0 3px 0 0;
     transform: rotate(17deg);
     left: 48%;
+    top: 0;
+  }
+}
+
+.points-earned, .points-total {
+  font-family: $font_accent_family;
+  font-size: 3em;
+  padding: 0 .35em;
+  width: 2em;
+}
+
+.points-earned {
+  text-align: right;
+  float: left;
+}
+
+.points-total {
+  float: right;
+  margin: .5em 0 0;
+}
+
+.points-text {
+  position: absolute;
+  left: 70%;
+  bottom: 0;
+  margin: 0;
+  font-style: italic;
+}
+
+.points-text--conclusion {
+  @include if_wider_than($text_breakpoint) {
+    left: 60%;
+  }
+}
+
+.points--featured {
+  margin: 2em 0;
+  position: relative;
+
+  &:after {
+    left: 40%;
   }
 
-  div {
-    font-family: $font_accent_family;
-    font-size: 3em;
-    padding: 0 .35em;
-    width: 2em;
-    &.earned {
-      text-align: right;
-      float: left;
-    }
-    &.total {
-      float: right;
-      margin: .5em 0 0;
-    }
+  .points-earned, .points-total {
+    line-height: 1em;
+    width: 37%;
   }
-  &.feature {
-    margin: 2em 0;
-    position: relative;
 
-    &:after {
-      left: 40%;
-    }
-
-    div {
-      line-height: 1em;
-      width: 37%;
-      &.total {
-        text-align: left;
-        margin-right: 20%;
-      }
-    }
-    p {
-      position: absolute;
-      right: 15%;
-      bottom: 0;
-      margin: 0;
-      font-style: italic;
-    }
-  }
-  &.conclusion {
-    p {
-      right: 31%;
-    }
+  .points-total {
+    text-align: left;
+    margin-right: 20%;
   }
 }
 
@@ -434,18 +441,13 @@ input {
   float: right;
   color: white;
 
-  div {
+  .points-earned, .points-total {
     font-size: 1.75em;
     line-height: 0.9;
-
-    &.total {
-      margin-top: .2em;
-    }
   }
 
-  @include if_narrower_than($text_breakpoint) {
-    font-size: .8em;
-    padding-top: 0.3rem;
+  .points-total {
+    margin-top: .2em;
   }
 }
 
