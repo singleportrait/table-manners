@@ -30,7 +30,6 @@ hr {
   border-bottom: 0;
 }
 
-
 /* Sprite */
 $sprites-spacing: 20px;
 //$sprites-sprite-dimensions: true;
@@ -206,6 +205,10 @@ $header_height: 44px;
   background-color: #fff;
   margin-bottom: 4rem;
 
+  p, h3, li {
+    position: relative;
+  }
+
   @include if_narrower_than($text_breakpoint) {
     width: calc(100% - 2rem);
     padding: 2rem 1rem;
@@ -234,7 +237,7 @@ $header_height: 44px;
 
 .shape-2 {
   @include shape_widths_with_narrower_screens(808px, 404px);
-  top: -50px;
+  top: -70px;
   left: -30px;
 
   @include if_narrower_than($shape_breakpoint) {
@@ -267,41 +270,6 @@ $header_height: 44px;
   }
   h5 {
     text-transform: uppercase;
-  }
-}
-
-
-/* Text */
-
-p {
-  margin: 1em 0;
-  position: relative;
-  &.error-message {
-    visibility: hidden;
-    text-align: center;
-    color: $error;
-
-    &.visible {
-      visibility: visible;
-    }
-  }
-
-  &.subhead {
-    margin: 0;
-    font-size: 1.5em;
-    font-style: italic;
-  }
-  &.note {
-    text-align: center;
-    clear: both;
-    font-style: italic;
-    color: $link_hover;
-  }
-}
-
-.main {
-  h1, h3, h4, h5 {
-    margin: 1.5em 0 .5em;
   }
 }
 

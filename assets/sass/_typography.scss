@@ -2,7 +2,7 @@ $font-size:   20px;
 $line-height: 30px;
 
 $font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font_accent_family: "brandon-grotesque", 'Avenir', 'Helvetica Neue', sans-serif;
+$font_accent_family: "Prophet", "utopia-std-headline", "acta-display", "brandon-grotesque", 'Avenir', 'Helvetica Neue', sans-serif;
 $font_header_family: 'Belizio', 'adobe-garamond-pro';
 
 .hidden-text {
@@ -17,7 +17,7 @@ $font_header_family: 'Belizio', 'adobe-garamond-pro';
 
 h1, h2, h3, h4, h5 {
   font-family: $font_accent_family;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -55,6 +55,38 @@ h5 {
   color: $accent;
   font-weight: 500;
   text-align: left;
+}
+
+p {
+  margin: 1em 0;
+
+  &.error-message {
+    visibility: hidden;
+    text-align: center;
+    color: $error;
+
+    &.visible {
+      visibility: visible;
+    }
+  }
+
+  &.subhead {
+    margin: 0;
+    font-size: 1.5em;
+    font-style: italic;
+  }
+  &.note {
+    text-align: center;
+    clear: both;
+    font-style: italic;
+    color: $link_hover;
+  }
+}
+
+.main {
+  h1, h3, h4, h5 {
+    margin: 1.5em 0 .5em;
+  }
 }
 
 a {
