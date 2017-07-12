@@ -1,9 +1,8 @@
 $font-size:   20px;
 $line-height: 30px;
 
-$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font_accent_family: "Prophet", "utopia-std-headline", "acta-display", "brandon-grotesque", 'Avenir', 'Helvetica Neue', sans-serif;
-$font_header_family: 'Belizio', 'adobe-garamond-pro';
+$body_font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$accent_font: "prophet", "Avenir", "Helvetica Neue", sans-serif;
 
 .hidden-text {
   text-indent: -9999px;
@@ -11,12 +10,12 @@ $font_header_family: 'Belizio', 'adobe-garamond-pro';
 }
 
 .featured-text {
-  font-family: $font_accent_family;
+  font-family: $accent_font;
   text-transform: uppercase;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: $font_accent_family;
+  font-family: $accent_font;
   font-weight: 400;
   text-align: center;
 }
@@ -115,7 +114,7 @@ strong {
 }
 
 blockquote {
-  font-family: $font_accent_family;
+  font-family: $accent_font;
   font-size: 1.35rem;
   line-height: 1.3rem;
   margin: 1rem 0;
