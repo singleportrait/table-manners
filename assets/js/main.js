@@ -77,9 +77,9 @@ $(document).ready(function() {
     {name:'q6',rules:'required'},
     {name:'q7',rules:'required'},
     {name:'q8',rules:'required'},
-    {name: 'q9',rules: 'required'},
-    {name: 'q10',rules: 'required'},
-    {name: 'q11',rules: 'required'}
+    {name:'q9',rules:'required'},
+    {name:'q10',rules:'required'},
+    {name:'q11',rules:'required'}
   ], function(errors, event) {
     check_required(errors, event, this.form);
   });
@@ -159,7 +159,6 @@ $(document).ready(function() {
     {name:'q53',rules:'required'},
     {name:'q54',rules:'required'},
     {name:'q55',rules:'required'},
-    {name:'q56',rules:'required'},
     {name:'q57',rules:'required'},
     {name:'q58',rules:'required'},
     {name:'q59',rules:'required'},
@@ -290,7 +289,7 @@ var Quiz = {
 
       log('fields: ', fields);
 
-      var correct_answers = 0;
+      var total_correct = 0;
       var total_questions = fields.length;
 
       for (var i = 0; i < total_questions; i++) {
@@ -308,7 +307,7 @@ var Quiz = {
           // Correct
           this.answers[field_name] = 1;
 
-          correct_answers++;
+          total_correct++;
 
         } else {
 
@@ -326,14 +325,14 @@ var Quiz = {
         }
       }
 
-      log(correct_answers + ' answers correct out of ' + total_questions);
+      log(total_correct + ' answers correct out of ' + total_questions);
 
       var form_set = $(form).attr('name');
 
       this.sections[form_set] = {
-        'correct': correct_answers,
+        'correct': total_correct,
         'total':   total_questions,
-        'grade':   correct_answers / total_questions
+        'grade':   total_correct / total_questions
       }
 
       this.update_modal(form_set);
@@ -356,7 +355,7 @@ var Quiz = {
     "q5"   : "gloves",
     "q6"   : "true",
     "q7"   : "false",
-    "q8"   : "false",
+    "q8"   : "true",
     "q9"   : "true",
     "q10"  : "false",
     "q11"  : "true",
@@ -415,7 +414,7 @@ var Quiz = {
     "q53"  : "service plate",
     "q54"  : "salad fork",
     "q55"  : "dinner fork",
-    "q56"  : "one inch from the edge of the table",
+    /* "q56"  : "one inch from the edge of the table", */
     "q57"  : "dinner knife",
     "q58"  : "salad knife",
     "q59"  : "teaspoon",
@@ -437,5 +436,9 @@ var Quiz = {
     "q70a" : "$5.25",
     "q70b" : "$7.00",
   }
+
+  /* To get # of questions total:
+   * Object.keys(this.correct_answers).length;
+   */
 
 }
