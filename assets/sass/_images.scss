@@ -35,6 +35,12 @@ $scrollable_bg_color: #f9f9f9;
     }
   }
 }
+.scrollable_wide_image--narrower {
+  @include if_wider_than(940px) {
+    max-width: 800px;
+    margin: 0 -#{(800px - $text_max_width) / 2};
+  }
+}
 
 .scrollable_wide_image--extra_wide {
   @include if_wider_than(1130px) {
