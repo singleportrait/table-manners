@@ -15,7 +15,7 @@ li {
 .list_columns {
   @include clearfix;
 
-  @media screen and (min-width: 700px) {
+  @include if_wider_than(700px) {
     width: 110%;
     margin-left: -5%;
     ol { padding-right: .5em; }
@@ -98,8 +98,8 @@ li {
   }
 
   @include if_narrower_than($text_breakpoint) {
-    margin-left: 2em;
-    padding: 0 0 1em;
+    margin-left: 2rem;
+    padding: 0 0 2rem;
     font-size: .85rem;
 
     li, li:before {
@@ -110,10 +110,6 @@ li {
       display: block;
       clear: both;
       padding-bottom: .75em;
-    }
-
-    input[type='radio'] + span {
-      top: -.25em;
     }
 
     img {

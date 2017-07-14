@@ -15,23 +15,28 @@ input {
 
   &[type='radio'] {
     position: absolute;
-    left: -999em;
+    left: -9999px;
 
     + span {
-      border-radius: 21px;
-      width:39px;
-      height:39px;
+      font: 500 1.25rem/1.7em $accent_font;
+      width: 1.85em;
+      height: 1.85em;
+      border-radius: 100%;
       border: 3px solid #ccc;
       cursor: pointer;
       text-align: center;
       display: block;
       float: left; /* make this fake elements inline block */
       position: relative; /* we need to move the element without effecting the doc flow */
-      top: 0.15em;  /* we're moving it slightly down for alignment purposes */
+      top: 0.15rem;  /* we're moving it slightly down for alignment purposes */
       left: -2px; /* we're moving it slightly to the left */
       margin: 0 .5em 0 0;
-      font: 500 1.25em/1.8em $accent_font;
       background-color: white;
+
+      @include if_narrower_than($text_breakpoint) {
+        top: -.25rem;
+        font-size: 1.1rem;
+      }
 
       &:hover {
         background-color: $accent;

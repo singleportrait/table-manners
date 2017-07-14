@@ -23,6 +23,7 @@
 
   @include if_narrower_than($text_breakpoint) {
     width: 100%;
+    float: none;
   }
 }
 
@@ -424,8 +425,7 @@ $header_height: 44px;
   }
 }
 
-@media screen and (max-width: $text_breakpoint) {
-
+@include if_narrower_than($text_breakpoint) {
   .splash {
     height: auto;
     padding-bottom: 2em;
