@@ -294,15 +294,17 @@ var Quiz = {
 
       for (var i = 0; i < total_questions; i++) {
 
-        var field_name  = fields[i].name;
+        var field_name = fields[i].name;
         var field_value = fields[i].value;
 
-        var answer      = this.correct_answers[field_name];
+        var clean_field_value = field_value.toLowerCase().trim();
+
+        var answer = this.correct_answers[field_name];
 
         log('field: ', fields[i]);
         log('correct answer: ', answer);
 
-        if (field_value == answer) {
+        if (clean_field_value == answer) {
 
           // Correct
           this.answers[field_name] = 1;
@@ -350,8 +352,8 @@ var Quiz = {
     "q1"   : "please respond",
     "q2"   : "tailcoat",
     "q3"   : "tuxedo",
-    "q4a"  : "Memorial Day",
-    "q4b"  : "Labor Day",
+    "q4a"  : "memorial day",
+    "q4b"  : "labor day",
     "q5"   : "gloves",
     "q6"   : "true",
     "q7"   : "false",
@@ -421,7 +423,7 @@ var Quiz = {
     "q60"  : "soup spoon",
     "q61"  : "fork",
     "q62"  : "fork",
-    "q63"  : "Spoons",
+    "q63"  : "spoons",
     "q64"  : "true",
     "q65"  : "true",
     "q66"  : "false",
