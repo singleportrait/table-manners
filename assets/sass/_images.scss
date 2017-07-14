@@ -14,19 +14,23 @@ $scrollable_bg_color: #f9f9f9;
 
   @include if_narrower_than(940px) {
     max-width: 800px;
-    margin: 0 -#{(800px - $text_max_width) / 2};
+    margin: 0 #{($text_max_width - 800px) / 2};
   }
 
   @include if_narrower_than(850px) {
     max-width: 700px;
-    margin: 0 -#{(700px - $text_max_width) / 2};
+    margin: 0 #{($text_max_width - 700px) / 2};
+  }
+
+  @include if_narrower_than(745px) {
+    max-width: $text_max_width;
+    margin: 0;
   }
 
   @include if_narrower_than($text_breakpoint) {
     overflow-x: scroll;
     background: $scrollable_bg_color;
     width: 100vw;
-    //margin: 0 calc((#{$text_max_width} - 100vw) / 2); // used for wider than 650px / text breakpoint
     margin: 0 -1rem;
     padding: 1rem 2rem 1rem 0;
 
@@ -38,7 +42,7 @@ $scrollable_bg_color: #f9f9f9;
 .scrollable_wide_image--narrower {
   @include if_wider_than(940px) {
     max-width: 800px;
-    margin: 0 -#{(800px - $text_max_width) / 2};
+    margin: 0 #{($text_max_width - 800px) / 2};
   }
 }
 
@@ -91,7 +95,7 @@ $scrollable_bg_color: #f9f9f9;
   border-top: 1px solid $accent;
   border-bottom: 1px solid $accent;
   width: 800px;
-  margin: 0 -#{(800px - $text_max_width) / 2};
+  margin: 0 #{($text_max_width - 800px) / 2};
 
   img {
     float: left;

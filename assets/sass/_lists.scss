@@ -51,10 +51,6 @@ li {
     padding: 0 .5rem;
     line-height: $list_line_height;
   }
-
-  span {
-    color: $link_hover;
-  }
 }
 
 .table_of_contents-has_quiz:after {
@@ -121,30 +117,29 @@ li {
 $lists:6,11,12,15,20,24,26,34,40,44,60,63,66;
 
 ol {
-  counter-reset: li; /* Initiate a counter */
-  margin-left: 0; /* Remove the default left margin */
-  padding-left: 0; /* Remove the default left padding */
+  counter-reset: li;
+  margin-left: 0;
+  padding-left: 0;
+
   @each $list in $lists {
     &[start="#{$list}"] {
       counter-reset: li -1+$list;
     }
   }
+
   li {
-    position: relative; /* Create a positioning context */
-    margin: 0 0 0 -.25rem; /* Send numbers out to the left */
-    padding: 0 .5rem; /* Add some spacing around the content */
-    list-style: none; /* Disable the normal item numbering */
+    position: relative;
+    margin: 0 0 0 -.25rem;
+    padding: 0 .5rem;
+    list-style: none;
     line-height: $list_line_height;
 
     &:before {
       content: counter(li) '.'; /* Use the counter as content */
       counter-increment: li; /* Increment the counter by 1 */
-      /* Position and style the number */
       position: absolute;
       left: -2em;
       width: 2em;
-      /* Some space between the number and the content in browsers that support
-         generated content but not positioning it (Camino 2 is one example) */
       margin-right: 8px;
       padding: 0 .3rem;
       font-weight: 600;
