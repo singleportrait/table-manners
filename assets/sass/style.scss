@@ -5,6 +5,7 @@
 @import "typography";
 @import "lists";
 @import "images";
+@import "forms";
 
 @import "compass/utilities/general/clearfix";
 @import "compass/css3";
@@ -288,94 +289,6 @@ $header_height: 44px;
   }
 }
 
-/* Forms */
-
-input {
-  padding: 2px 6px;
-  margin: 4px;
-  border: none;
-  border-bottom: 2px solid $accent;
-
-  &[type='text'] {
-    width: 12em;
-
-    &.correct {
-      border-bottom-color: $error;
-    }
-  }
-
-  &[type='radio'] {
-    position: absolute;
-    left: -999em;
-
-    + span {
-      @include border-radius(21px);
-      width:39px;
-      height:39px;
-      border: 3px solid #ccc;
-      cursor: pointer;
-      text-align: center;
-      display: block;
-      float: left; /* make this fake elements inline block */
-      position: relative; /* we need to move the element without effecting the doc flow */
-      top: 0.15em;  /* we're moving it slightly down for alignment purposes */
-      left: -2px; /* we're moving it slightly to the left */
-      margin: 0 .5em 0 0;
-      font: 500 1.25em/1.8em $accent_font;
-      background-color: white;
-
-      &:hover {
-        background-color: $accent;
-        border-color: $accent;
-      }
-    }
-
-    &:checked + span {
-      background-color: $accent;
-      border-color: $accent;
-    }
-
-    &.correct + span {
-      background-color: $error;
-      border-color: $error;
-    }
-
-    &.incorrect + span {
-      background-color: #ccc;
-      border-color: #ccc;
-    }
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  &[type="submit"]:disabled {
-    background-color: #ccc;
-    cursor: default;
-  }
-}
-
-.button {
-  margin: 0 auto;
-  display: block;
-  float: none;
-  background: $accent;
-  padding: 7px 12px 4px;
-  border-bottom: 0;
-  cursor: pointer;
-  font-family: $accent_font;
-  color: #000;
-  font-size: 1.1rem;
-  transition: background .2s ease;
-
-  &:hover {
-    text-decoration: none;
-    background: lighten($accent, 5%);
-    color: #000;
-  }
-}
-
 /* Points: Header, Modal, Conclusion */
 
 .points {
@@ -487,7 +400,7 @@ input {
     position: relative;
     margin: 10% auto;
     padding: 10px 20px 13px 20px;
-    @include border-radius(3px);
+    border-radius: 3px;
     background: #fff;
     @include clearfix;
   }
