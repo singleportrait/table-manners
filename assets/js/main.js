@@ -299,12 +299,21 @@ var Quiz = {
 
         var clean_field_value = field_value.toLowerCase().trim();
 
-        var answer = this.correct_answers[field_name];
+        var correct_answers = this.answer_key[field_name];
 
         log('field: ', fields[i]);
-        log('correct answer: ', answer);
+        log('correct answer(s): ', correct_answers);
 
-        if (clean_field_value == answer) {
+        var answered_correctly = false;
+
+        $.each(correct_answers, function(index, answer) {
+          if (clean_field_value == answer) {
+            answered_correctly = true;
+            return;
+          }
+        });
+
+        if (answered_correctly) {
 
           // Correct
           this.completed_questions_with_score[field_name] = 1;
@@ -316,13 +325,13 @@ var Quiz = {
           // Incorrect
           this.completed_questions_with_score[field_name] = 0;
 
-          var correct_radio = $('input[type="radio"][name="' + field_name + '"][value="' + answer + '"]');
+          var correct_radio = $('input[type="radio"][name="' + field_name + '"][value="' + correct_answers + '"]');
 
           $(correct_radio).addClass('correct');
           $(correct_radio).siblings('input[type="radio"]').addClass('incorrect');
 
           $('input[type="text"][name="' + field_name + '"]')
-            .val(answer)
+            .val(correct_answers[0])
             .addClass('correct');
         }
       }
@@ -348,99 +357,99 @@ var Quiz = {
   },
 
   // All tha answers
-  correct_answers: {
-    "q1"   : "please respond",
-    "q2"   : "tailcoat",
-    "q3"   : "tuxedo",
-    "q4a"  : "memorial day",
-    "q4b"  : "labor day",
-    "q5"   : "gloves",
-    "q6"   : "true",
-    "q7"   : "false",
-    "q8"   : "true",
-    "q9"   : "true",
-    "q10"  : "false",
-    "q11"  : "true",
-    "q12a" : "first",
-    "q12b" : "last",
-    "q13"  : "street",
-    "q14"  : "senior",
-    "q15"  : "right",
-    "q16"  : "hostess",
-    "q17"  : "female",
-    "q18a" : "right",
-    "q18b" : "host",
-    "q19a" : "guest of honor",
-    "q19b" : "left",
-    "q20"  : "chair",
-    "q21"  : "right",
-    "q22a" : "alone",
-    "q22b" : "embarrassment",
-    "q23"  : "rise",
-    "q24"  : "false",
-    "q25"  : "true",
-    "q26a" : "16",
-    "q26b" : "20",
-    "q27"  : "eight",
-    "q28"  : "left",
-    "q29"  : "left",
-    "q30"  : "right",
-    "q31"  : "left",
-    "q32"  : "accompanying",
-    "q33a" : "salad plate",
-    "q33b" : "coffee cup",
-    "q33c" : "place card",
-    "q34a" : "white wine",
-    "q34b" : "champagne",
-    "q35"  : "white",
-    "q36a" : "glass",
-    "q36b" : "drink",
-    "q37a" : "under",
-    "q37b" : "above",
-    "q38"  : "fork",
-    "q39a" : "one-third",
-    "q39b" : "halfway",
-    "q40"  : "palate",
-    "q41"  : "three",
-    "q42"  : "plate",
-    "q43"  : "flatware",
-    "q44"  : "butter plate",
-    "q45"  : "butter knife",
-    "q46"  : "water goblet",
-    "q47"  : "champagne flute",
-    "q48"  : "red wine glass",
-    "q49"  : "white wine glass",
-    "q50"  : "dessert spoon and fork",
-    "q51"  : "place card",
-    "q52"  : "napkin",
-    "q53"  : "service plate",
-    "q54"  : "salad fork",
-    "q55"  : "dinner fork",
-    /* "q56"  : "one inch from the edge of the table", */
-    "q57"  : "dinner knife",
-    "q58"  : "salad knife",
-    "q59"  : "teaspoon",
-    "q60"  : "soup spoon",
-    "q61"  : "fork",
-    "q62"  : "fork",
-    "q63"  : "spoons",
-    "q64"  : "true",
-    "q65"  : "true",
-    "q66"  : "false",
-    "q67a" : "to",
-    "q67b" : "insure",
-    "q67c" : "proper",
-    "q67d" : "service",
-    "q68a" : "15",
-    "q68b" : "20",
-    "q69a" : "$4.35",
-    "q69b" : "$5.80",
-    "q70a" : "$5.25",
-    "q70b" : "$7.00",
+  answer_key: {
+    "q1"   : ["please respond"],
+    "q2"   : ["tailcoat"],
+    "q3"   : ["tuxedo"],
+    "q4a"  : ["memorial day"],
+    "q4b"  : ["labor day"],
+    "q5"   : ["gloves"],
+    "q6"   : ["true"],
+    "q7"   : ["false"],
+    "q8"   : ["true"],
+    "q9"   : ["true"],
+    "q10"  : ["false"],
+    "q11"  : ["true"],
+    "q12a" : ["first"],
+    "q12b" : ["last"],
+    "q13"  : ["street"],
+    "q14"  : ["senior"],
+    "q15"  : ["right"],
+    "q16"  : ["hostess"],
+    "q17"  : ["female"],
+    "q18a" : ["right"],
+    "q18b" : ["host"],
+    "q19a" : ["guest of honor"],
+    "q19b" : ["left"],
+    "q20"  : ["chair"],
+    "q21"  : ["right"],
+    "q22a" : ["alone"],
+    "q22b" : ["embarrassment"],
+    "q23"  : ["rise"],
+    "q24"  : ["false"],
+    "q25"  : ["true"],
+    "q26a" : ["16", "sixteen"],
+    "q26b" : ["20", "twenty"],
+    "q27"  : ["8", "eight"],
+    "q28"  : ["left"],
+    "q29"  : ["left"],
+    "q30"  : ["right"],
+    "q31"  : ["left"],
+    "q32"  : ["accompanying"],
+    "q33a" : ["salad plate"],
+    "q33b" : ["coffee cup"],
+    "q33c" : ["place card"],
+    "q34a" : ["white", "white wine"],
+    "q34b" : ["champagne", "champagne flute"],
+    "q35"  : ["white"],
+    "q36a" : ["glass"],
+    "q36b" : ["drink"],
+    "q37a" : ["under"],
+    "q37b" : ["above"],
+    "q38"  : ["fork"],
+    "q39a" : ["one-third", "one third", "1/3"],
+    "q39b" : ["halfway", "one-half", "one half", "1/2"],
+    "q40"  : ["palate"],
+    "q41"  : ["3", "three"],
+    "q42"  : ["plate"],
+    "q43"  : ["flatware"],
+    "q44"  : ["butter plate"],
+    "q45"  : ["butter knife", "butter spreader"],
+    "q46"  : ["water goblet", "water glass", "water"],
+    "q47"  : ["champagne flute", "champagne"],
+    "q48"  : ["red wine glass", "red wine", "red"],
+    "q49"  : ["white wine glass", "white wine", "white"],
+    "q50"  : ["dessert spoon and fork", "dessert fork and spoon", "dessert spoon & fork", "dessert fork & spoon"],
+    "q51"  : ["place card", "placecard"],
+    "q52"  : ["napkin"],
+    "q53"  : ["service plate"],
+    "q54"  : ["salad fork"],
+    "q55"  : ["dinner fork"],
+    /* "q56"  : ["one inch from the edge of the table"], */
+    "q57"  : ["dinner knife"],
+    "q58"  : ["salad knife"],
+    "q59"  : ["teaspoon", "tea spoon"],
+    "q60"  : ["soup spoon"],
+    "q61"  : ["fork"],
+    "q62"  : ["fork"],
+    "q63"  : ["spoons"],
+    "q64"  : ["true"],
+    "q65"  : ["true"],
+    "q66"  : ["false"],
+    "q67a" : ["to", "o"],
+    "q67b" : ["insure", "nsure"],
+    "q67c" : ["proper", "roper"],
+    "q67d" : ["service", "ervice"],
+    "q68a" : ["15", "fifteen"],
+    "q68b" : ["20", "twenty"],
+    "q69a" : ["$4.35", "4.35"],
+    "q69b" : ["$5.80", "5.80"],
+    "q70a" : ["$5.25", "5.25"],
+    "q70b" : ["$7.00", "7.00"],
   }
 
   /* To get # of questions total:
-   * Object.keys(this.correct_answers).length;
+   * Object.keys(this.answer_key).length;
    */
 
 }
