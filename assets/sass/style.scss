@@ -350,13 +350,9 @@ input {
     outline: 0;
   }
 
-  &[type="submit"] {
-    @include transition(background-color);
-
-    &:disabled {
-      background-color: #ccc;
-      cursor: default;
-    }
+  &[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: default;
   }
 }
 
@@ -371,9 +367,12 @@ input {
   font-family: $accent_font;
   color: #000;
   font-size: 1.1rem;
+  transition: background .2s ease;
+
   &:hover {
     text-decoration: none;
-    background: darken($accent, 1%);
+    background: lighten($accent, 5%);
+    color: #000;
   }
 }
 
@@ -474,7 +473,7 @@ input {
   background: rgba(0,0,0,0.8);
   z-index: 99999;
   opacity:0;
-  @include transition(opacity 400ms ease-in);
+  transition: opacity 400ms ease-in;
   pointer-events: none;
   text-align: center;
 
@@ -495,14 +494,16 @@ input {
 
   .close {
     position: absolute;
+    text-indent: -9999px;
     color: black;
-    right: 10px;
-    width: 24px;
-    font-size: 2em;
-    font-family: $accent_font;
-    text-align: center;
-    text-decoration: none;
     top: 0;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    padding: .75rem;
+    box-sizing: content-box;
+    background: url(../images/close.svg) no-repeat .75rem;
+    background-size: 1rem 1rem;
 
     &:hover {
       color: #555;
