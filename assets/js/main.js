@@ -231,7 +231,7 @@ $(document).ready(function() {
 var Quiz = {
 
   // Save points scored
-  answers: {},
+  completed_questions_with_score: {},
 
   // Save points & grade per section
   sections: {},
@@ -239,7 +239,7 @@ var Quiz = {
   // Total points scored
   total_points: function() {
     var total_points = 0;
-      $.each(this.answers, function(p,v) {
+      $.each(this.completed_questions_with_score, function(p,v) {
         log(p, ': ', v);
         total_points += v;
       });
@@ -307,14 +307,14 @@ var Quiz = {
         if (clean_field_value == answer) {
 
           // Correct
-          this.answers[field_name] = 1;
+          this.completed_questions_with_score[field_name] = 1;
 
           total_correct++;
 
         } else {
 
           // Incorrect
-          this.answers[field_name] = 0;
+          this.completed_questions_with_score[field_name] = 0;
 
           var correct_radio = $('input[type="radio"][name="' + field_name + '"][value="' + answer + '"]');
 
