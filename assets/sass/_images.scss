@@ -1,0 +1,137 @@
+@import "compass/utilities/general/clearfix";
+@import "mixins";
+@import "variables";
+
+$scrollable_bg_color: #f9f9f9;
+
+.scrollable_wide_image {
+  width: 900px;
+  margin: 0 #{($text_max_width - 900px) / 2};
+
+  img {
+    max-width: 100%;
+  }
+
+  @include if_narrower_than(940px) {
+    max-width: 800px;
+    margin: 0 #{($text_max_width - 800px) / 2};
+  }
+
+  @include if_narrower_than(850px) {
+    max-width: 700px;
+    margin: 0 #{($text_max_width - 700px) / 2};
+  }
+
+  @include if_narrower_than(745px) {
+    max-width: $text_max_width;
+    margin: 0;
+  }
+
+  @include if_narrower_than($text_breakpoint) {
+    overflow-x: scroll;
+    background: $scrollable_bg_color;
+    width: 100vw;
+    margin: 0 -1rem;
+    padding: 1rem 2rem 1rem 0;
+
+    img {
+      max-width: 600px;
+    }
+  }
+}
+.scrollable_wide_image--narrower {
+  @include if_wider_than(940px) {
+    max-width: 800px;
+    margin: 0 #{($text_max_width - 800px) / 2};
+  }
+}
+
+.scrollable_wide_image--extra_wide {
+  @include if_wider_than(1130px) {
+    width: 1200px;
+    margin: 0 #{-($text_max_width / 2)};
+  }
+
+  @include if_narrower_than($text_breakpoint) {
+    img {
+      max-width: 700px;
+    }
+  }
+}
+
+.scrollable_image_helper_text {
+  padding: .5rem 0;
+  background-color: $scrollable_bg_color;
+  margin: 0 -1rem;
+  text-align: center;
+  border-top: 1px solid $accent;
+  color: $accent_text;
+  font-size: .75rem;
+
+  @include if_wider_than($text_breakpoint) {
+    display: none;
+  }
+}
+
+.wine_glasses {
+  float: left;
+  margin-right: 1em;
+  max-width: 260px;
+
+  @include if_narrower_than($text_breakpoint) {
+    float: none;
+    margin: 0 auto;
+  }
+
+  img {
+    max-width: 260px;
+  }
+}
+
+.individual_glasses {
+  @include clearfix;
+  font-size: .85rem;
+  padding: 1rem 0;
+  border-top: 1px solid $accent;
+  border-bottom: 1px solid $accent;
+  width: 800px;
+  margin: 0 #{($text_max_width - 800px) / 2};
+
+  img {
+    float: left;
+    margin: 0 1rem;
+  }
+
+  div {
+    float: left;
+    width: 50%;
+  }
+
+  p {
+    margin-left: 150px;
+  }
+
+  @include if_narrower_than(840px) {
+    width: calc(100vw - 3rem);
+    margin: 0 calc((#{$text_max_width} - 100vw + 2rem) / 2); // accounting for scrollbar
+
+    img {
+      width: 93.75px;
+      height: 187.5px;
+    }
+
+    p {
+      margin-left: 120px;
+    }
+  }
+
+  @include if_narrower_than(#{$text_breakpoint + 10px}) {
+    padding: 1rem;
+    width: 100%;
+    margin: 0;
+
+    div {
+      width: 100%;
+    }
+  }
+}

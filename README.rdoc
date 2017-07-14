@@ -1,11 +1,25 @@
 ==Table Manners in 20 Minutes
 
-===Table of Contents
+=== Documentation
+
+It's pretty simple; it's a static HTML website.
+
+All you need is to install Sass & Compass, and run:
+
+```sh
+compass watch
+```
+
+in the directory.
+
+=== Notes
+
+====Table of Contents
   Introduction to Version 2
   Introduction
   R.S.V.P.
   What Do I Wear?
-  Precedence, or Who Goes First?    
+  Precedence, or Who Goes First?
   Being Seated
   Dos and Don'ts
   Party Conversation
@@ -21,7 +35,7 @@
   I'm Finished
   Tipping
 
-===Self Test Example
+====Self Test Example
 
 - "R.S.V.P." is French for, "Repondez s'il vous plait," which in English means ________________________.
 - If you get an invitation that says "white tie," the man is to wear a __________________________.
@@ -29,7 +43,7 @@
 - A woman can wear summer clothes and summer white between ________________________ and ___________________.
 - A woman who wears a hat would traditionally also wear ________________________.
 
-===True or False?
+====True or False?
 
 - Ascots are not as formal as ties.
 - A hat is worn to all formal evening events.

@@ -1,0 +1,21 @@
+@mixin if_narrower_than($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin if_wider_than($width) {
+  @media (min-width: $width + 1) {
+    @content;
+  }
+}
+
+@mixin shape_widths_with_narrower_screens($width, $height) {
+  width: $width / 2;
+  height: $height / 2;
+
+  @include if_narrower_than($shape_breakpoint) {
+    width: $width / 4;
+    height: $height / 4;
+  }
+}
