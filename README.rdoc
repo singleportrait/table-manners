@@ -6,7 +6,7 @@ It's pretty simple; it's a static HTML website.
 
 All you need is to install Sass & Compass, and run:
 
-```sh
+```
 compass watch
 ```
 
