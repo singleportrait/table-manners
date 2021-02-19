@@ -1,6 +1,6 @@
-==Table Manners in 20 Minutes
+#Table Manners in 20 Minutes
 
-=== Documentation
+###Documentation
 
 It's pretty simple; it's a static HTML website.
 
@@ -10,9 +10,9 @@ All you need is to install Sass & Compass, and run:
 
 in the directory.
 
-=== Notes
+###Notes
 
-====Table of Contents
+####Table of Contents
   Introduction to Version 2
   Introduction
   R.S.V.P.
@@ -33,7 +33,7 @@ in the directory.
   I'm Finished
   Tipping
 
-====Self Test Example
+####Self Test Example
 
 - "R.S.V.P." is French for, "Repondez s'il vous plait," which in English means ________________________.
 - If you get an invitation that says "white tie," the man is to wear a __________________________.
@@ -41,7 +41,7 @@ in the directory.
 - A woman can wear summer clothes and summer white between ________________________ and ___________________.
 - A woman who wears a hat would traditionally also wear ________________________.
 
-====True or False?
+####True or False?
 
 - Ascots are not as formal as ties.
 - A hat is worn to all formal evening events.
