@@ -1,39 +1,41 @@
-#Table Manners in 20 Minutes
+# Table Manners in 20 Minutes
 
-###Documentation
+### Documentation
 
-It's pretty simple; it's a static HTML website.
+It's pretty simple; it's a static HTML website with a lil Javascript.
 
 All you need is to install Sass & Compass, and run:
 
+```
   compass watch
+```
 
 in the directory.
 
-###Notes
+### Notes
 
-####Table of Contents
-  Introduction to Version 2
-  Introduction
-  R.S.V.P.
-  What Do I Wear?
-  Precedence, or Who Goes First?
-  Being Seated
-  Dos and Don'ts
-  Party Conversation
-  Setting the Table
-  Ordering Dinner & Wine
-  Toasting
-  Serving
-  What Course is Next?
-  Description of Silverware
-  Fork, Spoon, Knife, or Fingers?
-  Is It Appropriate To…
-  A Traditionally Formal Meal
-  I'm Finished
-  Tipping
+#### Table of Contents
+- Introduction to Version 2
+- Introduction
+- R.S.V.P.
+- What Do I Wear?
+- Precedence, or Who Goes First?
+- Being Seated
+- Dos and Don'ts
+- Party Conversation
+- Setting the Table
+- Ordering Dinner & Wine
+- Toasting
+- Serving
+- What Course is Next?
+- Description of Silverware
+- Fork, Spoon, Knife, or Fingers?
+- Is It Appropriate To…
+- A Traditionally Formal Meal
+- I'm Finished
+- Tipping
 
-####Self Test Example
+#### Self Test Example
 
 - "R.S.V.P." is French for, "Repondez s'il vous plait," which in English means ________________________.
 - If you get an invitation that says "white tie," the man is to wear a __________________________.
@@ -41,7 +43,7 @@ in the directory.
 - A woman can wear summer clothes and summer white between ________________________ and ___________________.
 - A woman who wears a hat would traditionally also wear ________________________.
 
-####True or False?
+#### True or False?
 
 - Ascots are not as formal as ties.
 - A hat is worn to all formal evening events.
