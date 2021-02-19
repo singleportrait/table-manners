@@ -2,7 +2,9 @@
 
 ### Documentation
 
-It's pretty simple; it's a static HTML website with a lil Javascript. As of Feb 2021, it's hosted at [https://tablemanners.us](https://tablemanners.us) using Github Pages + a Namecheap domain.
+It's pretty simple; it's a static HTML website with a lil Javascript. 
+
+As of Feb 2021, it's hosted at [tablemanners.us](https://tablemanners.us), using Github Pages + a Namecheap domain.
 
 All you need is to install Sass & Compass, and run:
 
